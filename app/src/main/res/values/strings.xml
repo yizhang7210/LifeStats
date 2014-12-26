@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">LifeStats</string>
     <string name="hello">Hello World and Android!</string>
+    <string name="showActivity">Show Activity</string>
+    <string name="RecordActivity">Record Activity</string>
+    <string name="wakeupButton">Wake up</string>
+    <string name="sleepButton">Sleep</string>
+    <string name="breakfastButton">Breakfast</string>
+    <string name="lunchButton">Lunch</string>
+    <string name="addNewActivities">Add New Activities</string>
 </resources>

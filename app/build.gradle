@@ -6,6 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.lifestats"
+        minSdkVersion 13
     }
 
     buildTypes {

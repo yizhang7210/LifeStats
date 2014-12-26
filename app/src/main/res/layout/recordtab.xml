@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.5"
+            android:id="@+id/Top_half_layout"
+            android:orientation="vertical">
+
+
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fillViewport="true"
+                android:id="@+id/horizontalScrollView" >
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:baselineAligned="false"
+                    android:visibility="visible">
+
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/wakeupButton"
+                            android:id="@+id/wakeupButton"
+                            android:layout_margin="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/sleepButton"
+                            android:id="@+id/sleepButton"
+                            android:layout_margin="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="15dp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/breakfastButton"
+                            android:id="@+id/breakfastButton"
+                            android:layout_margin="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/lunchButton"
+                            android:id="@+id/lunchButton"
+                            android:layout_margin="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp" />
+
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="7.5"
+            android:id="@+id/bottom_half_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addNewActivities"
+                android:id="@+id/addNewActivities"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
