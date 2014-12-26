@@ -15,7 +15,6 @@
             android:baselineAligned="false"
             android:visibility="visible">
 
-
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
@@ -25,20 +24,22 @@
                     android:layout_height="50dp"
                     android:text="@string/wakeupButton"
                     android:id="@+id/wakeupButton"
-                    android:layout_margin="30dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp" />
 
                 <Button
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="@string/sleepButton"
                     android:id="@+id/sleepButton"
-                    android:layout_margin="30dp"
                     android:layout_weight="1"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp" />
 
             </TableRow>
 
@@ -52,20 +53,22 @@
                     android:layout_height="50dp"
                     android:text="@string/breakfastButton"
                     android:id="@+id/breakfastButton"
-                    android:layout_margin="30dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp" />
 
                 <Button
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="@string/lunchButton"
                     android:id="@+id/lunchButton"
-                    android:layout_margin="30dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp" />
 
             </TableRow>
         </TableLayout>

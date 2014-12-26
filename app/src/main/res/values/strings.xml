@@ -9,4 +9,8 @@
     <string name="breakfastButton">Breakfast</string>
     <string name="lunchButton">Lunch</string>
     <string name="addNewActivities">Add New Activities</string>
+    <string name="addActivityBox">New Activity</string>
+    <string name="addButtonText">Add</string>
+    <string name="dinnerButton">Dinner</string>
+    <string name="workoutButton">Work Out</string>
 </resources>
