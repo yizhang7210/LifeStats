@@ -1,10 +1,11 @@
 package com.lifestats;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-public class MainActivity extends FragmentActivity
+public class MainActivity extends Activity
 {
     ActionBar.Tab tab1, tab2;
     android.app.Fragment fragmentTab1 = new RecordActivityTab();
