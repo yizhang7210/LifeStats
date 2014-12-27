@@ -9,6 +9,10 @@ android {
         minSdkVersion 13
     }
 
+    dependencies {
+        compile 'com.android.support:support-v4:21.0.3'
+    }
+
     buildTypes {
         release {
             minifyEnabled false

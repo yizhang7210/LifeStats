@@ -1,16 +1,16 @@
 package com.lifestats;
 
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
-public class MainActivity extends Activity
+public class MainActivity extends FragmentActivity
 {
+    ActionBar.Tab tab1, tab2;
+    android.app.Fragment fragmentTab1 = new RecordActivityTab();
+    android.app.Fragment fragmentTab2 = new ShowActivityTab();
 
-    ActionBar.Tab tab1, tab2, tab3;
-    Fragment fragmentTab1 = new RecordActivityTab();
-    Fragment fragmentTab2 = new ShowActivityTab();
+
 
     /** Called when the activity is first created. */
     @Override
