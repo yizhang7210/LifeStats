@@ -115,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.13227513" vertical-offset="0" max-vertical-offset="567">
-              <caret line="5" column="89" selection-start-line="5" selection-start-column="89" selection-end-line="5" selection-end-column="89" />
+              <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -999,7 +999,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -1202,7 +1202,11 @@
       <created>1419659931982</created>
       <updated>1419659931982</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added icon.">
+      <created>1419661252968</created>
+      <updated>1419661252968</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1260,7 +1264,8 @@
     <MESSAGE value="Some progress." />
     <MESSAGE value="Trying to get ViewPager working. Pain." />
     <MESSAGE value="ViewPager scroll working. Good." />
-    <option name="LAST_COMMIT_MESSAGE" value="ViewPager scroll working. Good." />
+    <MESSAGE value="Added icon." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added icon." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1688,7 +1693,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13227513" vertical-offset="0" max-vertical-offset="567">
-          <caret line="5" column="89" selection-start-line="5" selection-start-column="89" selection-end-line="5" selection-end-column="89" />
+          <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
           <folding />
         </state>
       </provider>
