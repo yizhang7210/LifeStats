@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends Activity
 {
@@ -12,10 +13,12 @@ public class MainActivity extends Activity
     Fragment fragmentTab2 = new ShowActivityTab();
 
 
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        Log.e("main", "enter main activity");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 

@@ -6,24 +6,23 @@ package com.lifestats;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.app.FragmentManager;
-
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v13.app.FragmentStatePagerAdapter;
 
 /**
- * Created by yzhang on 27/12/14.
+ * .Created by yzhang on 27/12/14.....
  */
-public class TrialActivity extends Fragment
-{
+public class TrialActivity extends Fragment {
 
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 4;
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
@@ -36,26 +35,34 @@ public class TrialActivity extends Fragment
      */
     private PagerAdapter mPagerAdapter;
 
+    /*
     @Override
+    public void onCreate(Bundle savedInstanceState){
 
+        Log.e("trial", "on create");
+        super.onCreate(savedInstanceState);
+    }
+    */
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //super.onCreateView(inflater,container,savedInstanceState);
+        Log.e("trial", "on create view!!");
         return inflater.inflate(R.layout.recordtab, container, false);
-
-
     }
-
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        Log.e("trial", "on activity created");
+        this.setRetainInstance(true);
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
 
         mPager = (ViewPager) getView().findViewById(R.id.pager);
-        mPager.setOffscreenPageLimit(NUM_PAGES);
         mPager.setAdapter(mPagerAdapter);
 
+        Log.e("trial", "exiting on activity created");
     }
 
     /**
@@ -70,6 +77,7 @@ public class TrialActivity extends Fragment
 
         @Override
         public Fragment getItem(int position) {
+            Log.e("trial","getItem"+position);
             return new RecordTabs();
         }
 
