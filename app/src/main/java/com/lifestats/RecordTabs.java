@@ -16,7 +16,7 @@ public class RecordTabs extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.recordbuttons, container, false);
+                R.layout.recordtab, container, false);
 
         return rootView;
     }

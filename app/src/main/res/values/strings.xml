@@ -5,7 +5,7 @@
     <string name="showActivity">Show Activity</string>
     <string name="RecordActivity">Record Activity</string>
     <string name="wakeupButton">Wake up</string>
-    <string name="sleepButton">Sleep</string>
+    <string name="sleepButton">Go to bed</string>
     <string name="breakfastButton">Breakfast</string>
     <string name="lunchButton">Lunch</string>
     <string name="addNewActivities">Add New Activities</string>

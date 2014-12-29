@@ -1,34 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/leftTab"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2.5"
             android:id="@+id/Top_half_layout"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pager"
+            <ScrollView
+                android:id="@+id/recordButtons"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
-            </android.support.v4.view.ViewPager>
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:baselineAligned="false"
+                    android:visibility="visible">
+
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/wakeupButton"
+                            android:id="@+id/wakeupButton"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/sleepButton"
+                            android:id="@+id/sleepButton"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/breakfastButton"
+                            android:id="@+id/breakfastButton"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="@string/lunchButton"
+                            android:id="@+id/lunchButton"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp" />
+                    </TableRow>
+
+                </TableLayout>
+            </ScrollView>
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="7.5"
             android:id="@+id/bottom_half_layout"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +111,7 @@
                 android:layout_gravity="left|center_vertical"
                 android:layout_marginLeft="45dp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentLeft="true"/>
 
             <Button
                 android:layout_width="80dp"
@@ -60,5 +123,4 @@
                 android:layout_marginLeft="10dp"/>
         </RelativeLayout>
 
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
