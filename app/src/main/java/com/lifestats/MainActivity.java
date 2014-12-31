@@ -12,9 +12,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v13.app.FragmentStatePagerAdapter;
 
 /**
@@ -110,8 +107,14 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            Log.e("trial","getItem"+position);
-            return new RecordTabs();
+            switch (position){
+                case 0:
+                    return new RecordTab();
+                case 1:
+                    return new ShowTab();
+                default:
+                    throw new RuntimeException("Tab position out of range.");
+            }
         }
 
         @Override
