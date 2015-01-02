@@ -84,8 +84,8 @@ public class MainActivity extends FragmentActivity {
 
         ActionBar.Tab recordTab = actionBar.newTab();
         ActionBar.Tab showTab = actionBar.newTab();
-        recordTab.setText("Record Activities");
-        showTab.setText("Show Activities");
+        recordTab.setText(R.string.recordActivities);
+        showTab.setText(R.string.showActivities);
         recordTab.setTabListener(tabListener);
         showTab.setTabListener(tabListener);
 

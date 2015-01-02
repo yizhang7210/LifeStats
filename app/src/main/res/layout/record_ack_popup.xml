@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/recordAckText"
+        android:textColor="@color/black"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/ok"
+        android:id="@+id/recordAckButton"
+        android:layout_below="@+id/recordAckText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>
