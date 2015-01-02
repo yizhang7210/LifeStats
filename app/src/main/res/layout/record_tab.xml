@@ -3,12 +3,13 @@
     android:id="@+id/leftTab"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="3"
+            android:layout_weight="2.5"
             android:id="@+id/Top_half_layout"
             android:orientation="vertical">
 
@@ -91,7 +92,8 @@
             android:id="@+id/bottom_half_layout"
             android:orientation="horizontal"
             android:descendantFocusability="beforeDescendants"
-            android:focusableInTouchMode="true">
+            android:focusableInTouchMode="true"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,25 +104,31 @@
                 android:textSize="18sp"
                 android:layout_centerHorizontal="true" />
 
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-
-                android:id="@+id/addActivity"
-                android:hint="@string/addActivityBox"
-                android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="45dp"
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"/>
+                android:gravity="center">
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:text="@string/addButtonText"
-                android:id="@+id/addActButton"
-                android:layout_alignTop="@+id/addActivity"
-                android:layout_toRightOf="@+id/addNewActivities"
-                android:layout_marginLeft="10dp"/>
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+
+                    android:id="@+id/addActivityBox"
+                    android:hint="@string/addActivityBox"
+                    android:layout_centerVertical="true"/>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:text="@string/addButtonText"
+                    android:id="@+id/addActButton"
+                    android:layout_alignTop="@+id/addActivityBox"
+                    android:layout_toRightOf="@+id/addActivityBox"
+                    android:layout_marginLeft="32dp"/>
+
+                </RelativeLayout>
+
         </RelativeLayout>
 
 </LinearLayout>
