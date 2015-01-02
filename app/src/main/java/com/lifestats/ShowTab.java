@@ -11,6 +11,12 @@ import android.view.ViewGroup;
  * Not default anymore.
  */
 public class ShowTab extends Fragment{
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
