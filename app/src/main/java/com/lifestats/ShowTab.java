@@ -10,27 +10,29 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 /**
- * Created by yzhang on 25/12/14.
- * Not default anymore.
+ * Provides the right fragment for the "Show Activities" Tab.
  */
 public class ShowTab extends Fragment implements View.OnClickListener{
 
-    /*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        Button button = (Button) findView
-    }
-    */
-
+    /**
+     * onCreateView: inflate the UI and register the buttons.
+     * @param inflater layout inflater of parent activity.
+     * @param container container of the view.
+     * @param savedInstanceState saved instance state.
+     * @return Return the inflated view corresponding to the Record Activities Tab.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        /**
+         * Inflate the view.
+         */
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.showtab, container, false);
+                R.layout.show_tab, container, false);
 
-
+        /**
+         * Get all "Show Activity" type buttons and register OnClickListener.
+         */
         ArrayList<View> allButtons;
         allButtons = rootView.findViewById(R.id.showButtons).getTouchables();
 
@@ -42,6 +44,10 @@ public class ShowTab extends Fragment implements View.OnClickListener{
         return rootView;
     }
 
+    /**
+     * Implement OnClickListener for the buttons.
+     * @param v The view been clicked.
+     */
     @Override
     public void onClick(View v) {
 
