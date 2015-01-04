@@ -90,6 +90,10 @@ public class MainActivity extends FragmentActivity {
         actionBar.addTab(showTab);
 
     }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 
     /**
      * Define the PagerAdapter.

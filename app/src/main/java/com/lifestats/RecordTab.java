@@ -1,19 +1,21 @@
 package com.lifestats;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.app.Fragment;
-import android.text.Editable;
+import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -24,12 +26,13 @@ import java.util.Date;
 /**
  * Provides the right fragment for the "Record Activities" Tab.
  */
-public class RecordTab extends Fragment implements View.OnClickListener{
+public class RecordTab extends Fragment implements View.OnClickListener {
 
     /**
      * onCreateView: inflate the UI and register the buttons.
-     * @param inflater layout inflater of parent activity.
-     * @param container container of the view.
+     *
+     * @param inflater           layout inflater of parent activity.
+     * @param container          container of the view.
      * @param savedInstanceState saved instance state.
      * @return Return the inflated view corresponding to the Record Activities Tab.
      */
@@ -47,7 +50,7 @@ public class RecordTab extends Fragment implements View.OnClickListener{
          */
         ArrayList<View> allButtons;
         allButtons = rootView.findViewById(R.id.recordButtons).getTouchables();
-        for(View buttonView : allButtons){
+        for (View buttonView : allButtons) {
             Button button = (Button) buttonView;
             button.setOnClickListener(this);
         }
@@ -55,22 +58,22 @@ public class RecordTab extends Fragment implements View.OnClickListener{
         /**
          * Get the add activity button.
          */
-
         Button addButton = (Button) rootView.findViewById(R.id.addActButton);
         addButton.setOnClickListener(this);
-
+        Log.e("button", "registered");
         return rootView;
     }
 
     /**
      * Implement OnClickListener for the buttons.
+     *
      * @param v The view been clicked.
      */
     @Override
     public void onClick(View v) {
         int buttonId = v.getId();
 
-        switch (buttonId){
+        switch (buttonId) {
             case R.id.addActButton:
 
                 /**
@@ -83,7 +86,8 @@ public class RecordTab extends Fragment implements View.OnClickListener{
                 /**
                  * Add the activity to the overall button layout.
                  */
-                addActivity((Button) v, text);
+                addActivity(text);
+                Log.e("button", "onclick");
                 break;
             default:
                 showPopup((Button) v);
@@ -92,18 +96,108 @@ public class RecordTab extends Fragment implements View.OnClickListener{
 
     /**
      * Add a new button for customized activities.
-     * @param btn The "Add" button.
+     *
+     * @param text Name of new activity.
      */
-    private void addActivity(Button btn, String text) {
-        Log.e("addButton", text);
+    private void addActivity(String text) {
+
+        /**
+         * Get the parent view the button needs to add to.
+         * Last row if there's only one button, else create new row.
+         */
+        Activity act = getActivity();
+        TableLayout table = (TableLayout) act.findViewById(R.id.recordButtonsTable);
+        TableRow lastRow = (TableRow) table.getChildAt(table.getChildCount() - 1);
 
 
+        switch (lastRow.getChildAt(1).getVisibility()) {
+            case View.INVISIBLE:
+                this.addButtonAsSecond(lastRow, text);
+                break;
+            case View.VISIBLE:
+                this.addButtonAsFirst(act, table, lastRow, text);
+                break;
+            default:
+                assert false;
+        }
 
+        /**
+         * Hide the soft keyboard.
+         */
+        InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(table.getWindowToken(), 0);
 
+        /**
+         * Clear the edit box.
+         */
+        EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
+        inputBox.setText("");
+        inputBox.clearFocus();
     }
 
     /**
+     * Deals with add activity if there are even number of buttons.
+     *
+     * @param act      Current Activity.
+     * @param theTable The table containing the buttons.
+     * @param lastRow  The previous complete row with 2 buttons.
+     * @param text     The name of the new activity.
+     */
+    private void addButtonAsFirst(Context act, TableLayout theTable, TableRow lastRow, String text) {
+
+        /**
+         * Create new row for the table.
+         */
+        TableRow newRow = new TableRow(act);
+        newRow.setLayoutParams(lastRow.getLayoutParams());
+
+        /**
+         * Create both buttons. Set the second invisible.
+         */
+        Button old = (Button) lastRow.getChildAt(0);
+
+        Button left = new Button(act);
+        left.setText(text);
+        left.setLayoutParams(old.getLayoutParams());
+        left.setOnClickListener(this);
+
+        Button right = new Button(act);
+        right.setText("TempButton");
+        right.setLayoutParams(old.getLayoutParams());
+        right.setVisibility(View.INVISIBLE);
+        right.setOnClickListener(this);
+
+        /**
+         * Add them on.
+         */
+        newRow.addView(left);
+        newRow.addView(right);
+
+        theTable.addView(newRow);
+    }
+
+    /**
+     * Deal with add activity if there are odd number of buttons.
+     *
+     * @param theRow The current row that already has 1 button.
+     * @param text   The name of the new activity.
+     */
+    private void addButtonAsSecond(TableRow theRow, String text) {
+
+        /**
+         * Get the second button. Set text and visibility.
+         */
+        Button btn = (Button) theRow.getChildAt(1);
+
+        btn.setText(text);
+        btn.setVisibility(View.VISIBLE);
+
+    }
+
+
+    /**
      * Create a Popup Window acknowledging recording the activity.
+     *
      * @param btn The button been clicked.
      */
     public void showPopup(Button btn) {
@@ -141,11 +235,12 @@ public class RecordTab extends Fragment implements View.OnClickListener{
          * Add the dismiss button to the Popup Window.
          */
         Button buttonOK = (Button) popupView.findViewById(R.id.recordAckButton);
-        buttonOK.setOnClickListener(new Button.OnClickListener(){
+        buttonOK.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pw.dismiss();
-            }});
+            }
+        });
 
         /**
          * Add the Popup Window itself.
