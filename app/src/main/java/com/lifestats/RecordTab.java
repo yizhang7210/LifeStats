@@ -3,12 +3,15 @@ package com.lifestats;
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Editable;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -49,6 +52,13 @@ public class RecordTab extends Fragment implements View.OnClickListener{
             button.setOnClickListener(this);
         }
 
+        /**
+         * Get the add activity button.
+         */
+
+        Button addButton = (Button) rootView.findViewById(R.id.addActButton);
+        addButton.setOnClickListener(this);
+
         return rootView;
     }
 
@@ -62,7 +72,18 @@ public class RecordTab extends Fragment implements View.OnClickListener{
 
         switch (buttonId){
             case R.id.addActButton:
-                addActivity((Button) v);
+
+                /**
+                 * Get button name from EditText.
+                 */
+                Activity currentAct = getActivity();
+                EditText textBox = (EditText) currentAct.findViewById(R.id.addActivityBox);
+                String text = textBox.getText().toString();
+
+                /**
+                 * Add the activity to the overall button layout.
+                 */
+                addActivity((Button) v, text);
                 break;
             default:
                 showPopup((Button) v);
@@ -73,7 +94,12 @@ public class RecordTab extends Fragment implements View.OnClickListener{
      * Add a new button for customized activities.
      * @param btn The "Add" button.
      */
-    private void addActivity(Button btn) {
+    private void addActivity(Button btn, String text) {
+        Log.e("addButton", text);
+
+
+
+
     }
 
     /**
