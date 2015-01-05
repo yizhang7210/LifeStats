@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Provides the right fragment for the "Record Activities" Tab.
+ * Provides the fragment for the "Record Activities" Tab.
  */
 public class RecordTab extends Fragment implements View.OnClickListener {
 
@@ -60,7 +59,6 @@ public class RecordTab extends Fragment implements View.OnClickListener {
          */
         Button addButton = (Button) rootView.findViewById(R.id.addActButton);
         addButton.setOnClickListener(this);
-        Log.e("button", "registered");
         return rootView;
     }
 
@@ -87,7 +85,6 @@ public class RecordTab extends Fragment implements View.OnClickListener {
                  * Add the activity to the overall button layout.
                  */
                 addActivity(text);
-                Log.e("button", "onclick");
                 break;
             default:
                 showPopup((Button) v);
@@ -102,30 +99,28 @@ public class RecordTab extends Fragment implements View.OnClickListener {
     private void addActivity(String text) {
 
         /**
-         * Get the parent view the button needs to add to.
-         * Last row if there's only one button, else create new row.
+         * Get the last row of buttons.
+         * Deal with odd and even number of buttons accordingly.
          */
         Activity act = getActivity();
-        TableLayout table = (TableLayout) act.findViewById(R.id.recordButtonsTable);
-        TableRow lastRow = (TableRow) table.getChildAt(table.getChildCount() - 1);
+        TableLayout recordTable = (TableLayout) act.findViewById(R.id.recordButtonsTable);
+        TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
+        TableRow recordTableLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
+        TableRow showTableLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
 
-
-        switch (lastRow.getChildAt(1).getVisibility()) {
-            case View.INVISIBLE:
-                this.addButtonAsSecond(lastRow, text);
-                break;
-            case View.VISIBLE:
-                this.addButtonAsFirst(act, table, lastRow, text);
-                break;
-            default:
-                assert false;
+        if (recordTableLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
+            this.addButtonAsFirst(act, recordTable, recordTableLastRow, text);
+            this.addButtonAsFirst(act, showTable, showTableLastRow, text);
+        } else {
+            this.addButtonAsSecond(recordTableLastRow, text);
+            this.addButtonAsSecond(showTableLastRow, text);
         }
 
         /**
          * Hide the soft keyboard.
          */
         InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(table.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(recordTable.getWindowToken(), 0);
 
         /**
          * Clear the edit box.
@@ -164,8 +159,8 @@ public class RecordTab extends Fragment implements View.OnClickListener {
         Button right = new Button(act);
         right.setText("TempButton");
         right.setLayoutParams(old.getLayoutParams());
-        right.setVisibility(View.INVISIBLE);
         right.setOnClickListener(this);
+        right.setVisibility(View.INVISIBLE);
 
         /**
          * Add them on.
@@ -191,7 +186,6 @@ public class RecordTab extends Fragment implements View.OnClickListener {
 
         btn.setText(text);
         btn.setVisibility(View.VISIBLE);
-
     }
 
 

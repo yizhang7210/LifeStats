@@ -10,7 +10,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 /**
- * Provides the right fragment for the "Show Activities" Tab.
+ * Provides the fragment for the "Show Activities" Tab.
  */
 public class ShowTab extends Fragment implements View.OnClickListener{
 

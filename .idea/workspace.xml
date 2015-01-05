@@ -48,9 +48,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53714b1-c794-4a78-8794-bf1def096645" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LifeStats.iws" />
@@ -77,46 +77,62 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="2706">
-              <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1841" max-vertical-offset="2662">
+              <caret line="132" column="1" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecordTab.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="5478">
+              <caret line="114" column="61" selection-start-line="114" selection-start-column="61" selection-end-line="114" selection-end-column="61" />
               <folding>
-                <element signature="e#3031#3032#0" expanded="true" />
-                <element signature="e#3067#3068#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#7544#7692#0" expanded="true" />
+                <element signature="e#7681#7682#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordTab.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
+      <file leaf-file-name="ShowTab.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64324325" vertical-offset="2591" max-vertical-offset="5500">
-              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1188">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_tab.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.0152671" vertical-offset="0" max-vertical-offset="1782">
+              <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="record_tab.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.806452" vertical-offset="2288" max-vertical-offset="3036">
-              <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
-              <folding>
-                <element signature="e#1352#1374#0" expanded="true" />
-                <element signature="e#1925#1946#0" expanded="true" />
-                <element signature="e#2681#2706#0" expanded="true" />
-                <element signature="e#3260#3281#0" expanded="true" />
-                <element signature="e#4323#4349#0" expanded="true" />
-                <element signature="e#4986#5010#0" expanded="true" />
-                <element signature="e#5225#5248#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.677419" vertical-offset="176" max-vertical-offset="3036">
+              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+              <folding>
+                <element signature="e#4986#5010#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -756,10 +772,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/record_ack_popup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" />
       </list>
     </option>
@@ -796,6 +812,35 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LifeStats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LifeStats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.lifestats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -888,34 +933,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="manifests" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LifeStats" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LifeStats" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.lifestats" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1050,7 +1067,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1348,7 +1364,11 @@
       <created>1420395805066</created>
       <updated>1420395805066</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Implemented the &quot;add&quot; button for the record activity tab.&#10;Overrode back button.&#10;Record activity tab pretty much done.&#10;Will do the show activity and finally hookup to database.&#10;Should be done in a month.&#10;Not very happy at the moment.">
+      <created>1420412012780</created>
+      <updated>1420412012780</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1365,11 +1385,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3258294" sideWeight="0.50032157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27633852" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27633852" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252595" sideWeight="0.49967846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325688" sideWeight="0.50032157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19516407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1417,25 +1437,15 @@
     <MESSAGE value="Tidied up current code. Looks good so far." />
     <MESSAGE value="Tweaked a bit on layout. Centered the edit box and the add button." />
     <MESSAGE value="getting started on the add activity button." />
-    <option name="LAST_COMMIT_MESSAGE" value="getting started on the add activity button." />
+    <MESSAGE value="Implemented the &quot;add&quot; button for the record activity tab.&#10;Overrode back button.&#10;Record activity tab pretty much done.&#10;Will do the show activity and finally hookup to database.&#10;Should be done in a month.&#10;Not very happy at the moment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented the &quot;add&quot; button for the record activity tab.&#10;Overrode back button.&#10;Record activity tab pretty much done.&#10;Will do the show activity and finally hookup to database.&#10;Should be done in a month.&#10;Not very happy at the moment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_ack_popup.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="638">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1210">
@@ -1448,10 +1458,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2882">
           <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1461,6 +1468,8 @@
           <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7544#7692#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1519,10 +1528,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2882">
           <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,6 +1546,8 @@
           <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7544#7692#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1549,13 +1557,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="2882">
           <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
             <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1578,10 +1580,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2882">
           <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1599,6 +1598,8 @@
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7544#7692#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1607,10 +1608,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="2464">
           <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1620,6 +1618,8 @@
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7544#7692#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1628,10 +1628,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2090">
           <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1651,13 +1648,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1035">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
             <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1685,13 +1676,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2025">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="56" />
           <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
             <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1737,13 +1722,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="1635">
           <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
           <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
             <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1854,14 +1833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="1188">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="242">
@@ -1873,40 +1844,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
+    <entry file="file://$PROJECT_DIR$/../../Tools/android-sdk/sources/android-21/android/view/LayoutInflater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="1804">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="7757" max-vertical-offset="21582">
+          <caret line="404" column="16" selection-start-line="404" selection-start-column="16" selection-end-line="404" selection-end-column="16" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="2706">
-          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
-          <folding>
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1841" max-vertical-offset="2662">
+          <caret line="132" column="1" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.806452" vertical-offset="2288" max-vertical-offset="3036">
-          <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
+        <state vertical-scroll-proportion="-5.677419" vertical-offset="176" max-vertical-offset="3036">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
           <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
             <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1916,12 +1875,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64324325" vertical-offset="2591" max-vertical-offset="5500">
-          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="5478">
+          <caret line="114" column="61" selection-start-line="114" selection-start-column="61" selection-end-line="114" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7544#7692#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0152671" vertical-offset="0" max-vertical-offset="1782">
+          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>
