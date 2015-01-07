@@ -2,8 +2,12 @@ package com.lifestats;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,6 +30,14 @@ import java.util.Date;
  * Provides the fragment for the "Record Activities" Tab.
  */
 public class RecordTab extends Fragment implements View.OnClickListener {
+
+    private MyDBHelper dbHelper;
+
+    @Override
+    public void onAttach(Activity activity){
+        super.onAttach(activity);
+        this.dbHelper = new MyDBHelper(activity);
+    }
 
     /**
      * onCreateView: inflate the UI and register the buttons.
@@ -84,10 +96,24 @@ public class RecordTab extends Fragment implements View.OnClickListener {
                 /**
                  * Add the activity to the overall button layout.
                  */
-                addActivity(text);
+                this.addActivity(text);
                 break;
             default:
-                showPopup((Button) v);
+
+                /**
+                 * Get the name of the activity, record it to database.
+                 */
+                Button btn = (Button) v;
+                String actName = btn.getText().toString();
+
+                DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                String currentTime = dateFormat.format(new Date());
+                this.recordActivity(actName, currentTime);
+                this.checkDB(actName);
+                /**
+                 * Produce the record successful message.
+                 */
+                this.showPopup(btn, currentTime);
         }
     }
 
@@ -98,11 +124,16 @@ public class RecordTab extends Fragment implements View.OnClickListener {
      */
     private void addActivity(String text) {
 
+        Activity act = getActivity();
+        /**
+         * Add the relevant activity to the database first.
+         */
+        this.addActivityTable(text);
+
         /**
          * Get the last row of buttons.
          * Deal with odd and even number of buttons accordingly.
          */
-        Activity act = getActivity();
         TableLayout recordTable = (TableLayout) act.findViewById(R.id.recordButtonsTable);
         TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
         TableRow recordTableLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
@@ -194,7 +225,7 @@ public class RecordTab extends Fragment implements View.OnClickListener {
      *
      * @param btn The button been clicked.
      */
-    public void showPopup(Button btn) {
+    public void showPopup(Button btn, String currentTime) {
 
         /**
          * Get current activity and inflate the Popup Window layout.
@@ -211,11 +242,10 @@ public class RecordTab extends Fragment implements View.OnClickListener {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
 
         /**
-         * Get current time.
+         * Get current display message.
          */
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         String recordSuccess = getString(R.string.recordSuccessful,
-                btn.getText(), dateFormat.format(new Date()));
+                btn.getText(), currentTime);
 
         /**
          * Get the corresponding view and add the text.
@@ -241,5 +271,45 @@ public class RecordTab extends Fragment implements View.OnClickListener {
          */
         pw.showAtLocation(popupView, Gravity.CENTER, 0, 0);
 
+    }
+
+    private void addActivityTable(String activityName) {
+
+        activityName = activityName.replace(" ","");
+
+        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+
+        db.execSQL(this.dbHelper.getCreateTableCommand(activityName));
+
+    }
+
+    private void recordActivity(String tableName, String time){
+
+        tableName = tableName.replace(" ","");
+
+        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+
+        ContentValues now = new ContentValues();
+
+        now.put("TIME", time);
+
+        db.insert(tableName, null, now);
+
+    }
+
+
+
+    private void checkDB(String tableName){
+        SQLiteDatabase check = this.dbHelper.getReadableDatabase();
+
+        tableName = tableName.replace(" ", "");
+
+        Log.e("SQL", tableName);
+
+        Cursor c = check.rawQuery("SELECT * FROM "+tableName, null);
+
+        c.moveToLast();
+
+        Log.e("SQL", ""+c.getString(0));
     }
 }
