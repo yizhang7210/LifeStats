@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * Provides the fragment for the "Show Activities" Tab.
  */
-public class ShowTab extends Fragment implements View.OnClickListener{
+public class ShowTab extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
     /**
      * onCreateView: inflate the UI and register the buttons.
@@ -51,5 +51,10 @@ public class ShowTab extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        return false;
     }
 }

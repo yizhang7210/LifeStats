@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -29,9 +30,9 @@ import java.util.Date;
 /**
  * Provides the fragment for the "Record Activities" Tab.
  */
-public class RecordTab extends Fragment implements View.OnClickListener {
+public class RecordTab extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
-    private MyDBHelper dbHelper;
+    private static MyDBHelper dbHelper;
 
     @Override
     public void onAttach(Activity activity){
@@ -64,6 +65,7 @@ public class RecordTab extends Fragment implements View.OnClickListener {
         for (View buttonView : allButtons) {
             Button button = (Button) buttonView;
             button.setOnClickListener(this);
+            button.setOnLongClickListener(this);
         }
 
         /**
@@ -105,15 +107,15 @@ public class RecordTab extends Fragment implements View.OnClickListener {
                  */
                 Button btn = (Button) v;
                 String actName = btn.getText().toString();
-
+                Log.e("test","onclick");
                 DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 this.recordActivity(actName, currentTime);
-                this.checkDB(actName);
+                this.checkDB(actName);//Debug
                 /**
                  * Produce the record successful message.
                  */
-                this.showPopup(btn, currentTime);
+                this.showRecordPopup(btn, currentTime);
         }
     }
 
@@ -136,15 +138,15 @@ public class RecordTab extends Fragment implements View.OnClickListener {
          */
         TableLayout recordTable = (TableLayout) act.findViewById(R.id.recordButtonsTable);
         TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
-        TableRow recordTableLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
-        TableRow showTableLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
+        TableRow recordLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
+        TableRow showLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
 
-        if (recordTableLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            this.addButtonAsFirst(act, recordTable, recordTableLastRow, text);
-            this.addButtonAsFirst(act, showTable, showTableLastRow, text);
+        if (recordLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
+            this.addButtonAsFirst(act, recordTable, recordLastRow, text, true);
+            this.addButtonAsFirst(act, showTable, showLastRow, text, false);
         } else {
-            this.addButtonAsSecond(recordTableLastRow, text);
-            this.addButtonAsSecond(showTableLastRow, text);
+            this.addButtonAsSecond(recordLastRow, text);
+            this.addButtonAsSecond(showLastRow, text);
         }
 
         /**
@@ -169,7 +171,8 @@ public class RecordTab extends Fragment implements View.OnClickListener {
      * @param lastRow  The previous complete row with 2 buttons.
      * @param text     The name of the new activity.
      */
-    private void addButtonAsFirst(Context act, TableLayout theTable, TableRow lastRow, String text) {
+    private void addButtonAsFirst(Context act, TableLayout theTable,
+                                  TableRow lastRow, String text, Boolean isOnRecordTab) {
 
         /**
          * Create new row for the table.
@@ -185,13 +188,31 @@ public class RecordTab extends Fragment implements View.OnClickListener {
         Button left = new Button(act);
         left.setText(text);
         left.setLayoutParams(old.getLayoutParams());
-        left.setOnClickListener(this);
 
         Button right = new Button(act);
         right.setText("TempButton");
         right.setLayoutParams(old.getLayoutParams());
-        right.setOnClickListener(this);
+
         right.setVisibility(View.INVISIBLE);
+
+        /**
+         * Add OnClickListener and OnLongClickListener
+         */
+        if(isOnRecordTab){
+            left.setOnClickListener(this);
+            left.setOnLongClickListener(this);
+            right.setOnClickListener(this);
+            right.setOnLongClickListener(this);
+        }else{
+
+            ShowTab showTab = new ShowTab();
+
+            left.setOnClickListener(showTab);
+            left.setOnLongClickListener(showTab);
+            right.setOnClickListener(showTab);
+            right.setOnLongClickListener(showTab);
+        }
+
 
         /**
          * Add them on.
@@ -225,7 +246,7 @@ public class RecordTab extends Fragment implements View.OnClickListener {
      *
      * @param btn The button been clicked.
      */
-    public void showPopup(Button btn, String currentTime) {
+    public void showRecordPopup(Button btn, String currentTime) {
 
         /**
          * Get current activity and inflate the Popup Window layout.
@@ -273,6 +294,73 @@ public class RecordTab extends Fragment implements View.OnClickListener {
 
     }
 
+    public void showClearHistPopup(Button btn) {
+
+        final Button buttonToDelete = btn;
+        /**
+         * Get current activity and inflate the Popup Window layout.
+         */
+        Activity currentAct = getActivity();
+        View popupView = currentAct.getLayoutInflater().inflate(R.layout.delete_act_popup, null);
+
+        /**
+         * Define the Popup Window.
+         */
+        final PopupWindow pw = new PopupWindow(
+                popupView,
+                TableLayout.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        /**
+         * Get current display message.
+         */
+        final String actName = btn.getText().toString();
+        String recordSuccess = getString(R.string.confirmDelete,
+                actName);
+
+        /**
+         * Get the corresponding view and add the text.
+         */
+        final TextView textView = (TextView) popupView.findViewById(R.id.confirmDeleteText);
+        textView.setText(recordSuccess);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        /**
+         * Add the yes and no buttons to the Popup Window.
+         */
+        Button buttonNo = (Button) popupView.findViewById(R.id.deleteNoButton);
+        buttonNo.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pw.dismiss();
+            }
+        });
+
+        Button buttonYes = (Button) popupView.findViewById(R.id.deleteYesButton);
+        buttonYes.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String dbName = buttonToDelete.getText().toString().replace(" ","");
+
+                SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
+
+                db.execSQL("DELETE FROM " + dbName);
+
+                pw.dismiss();
+
+            }
+        });
+
+
+        /**
+         * Add the Popup Window itself.
+         */
+        pw.showAtLocation(popupView, Gravity.CENTER, 0, 0);
+
+    }
+
     private void addActivityTable(String activityName) {
 
         activityName = activityName.replace(" ","");
@@ -297,8 +385,6 @@ public class RecordTab extends Fragment implements View.OnClickListener {
 
     }
 
-
-
     private void checkDB(String tableName){
         SQLiteDatabase check = this.dbHelper.getReadableDatabase();
 
@@ -311,5 +397,13 @@ public class RecordTab extends Fragment implements View.OnClickListener {
         c.moveToLast();
 
         Log.e("SQL", ""+c.getString(0));
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+
+        this.showClearHistPopup((Button) v);
+
+        return true;
     }
 }

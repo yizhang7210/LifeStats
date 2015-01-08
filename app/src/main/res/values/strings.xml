@@ -17,4 +17,7 @@
     <string name="recordActivities">Record Activities</string>
     <string name="ok">OK</string>
     <string name="recordSuccessful">You have recorded activity\n%1$s\nat time\n%2$s</string>
+    <string name="confirmDelete">Are you sure you want to clear the history of activity\n%1$s?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
