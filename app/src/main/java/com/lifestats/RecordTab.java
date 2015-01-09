@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -32,7 +31,8 @@ import java.util.Date;
  */
 public class RecordTab extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
-    private static MyDBHelper dbHelper;
+    public static MyDBHelper dbHelper;
+    public static ArrayList<String> existButtons = new ArrayList<>();
 
     @Override
     public void onAttach(Activity activity){
@@ -66,6 +66,8 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
             Button button = (Button) buttonView;
             button.setOnClickListener(this);
             button.setOnLongClickListener(this);
+            Log.e("button", button.getText().toString());
+            this.existButtons.add(button.getText().toString().replace(" ", ""));
         }
 
         /**
@@ -75,6 +77,29 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
         addButton.setOnClickListener(this);
         return rootView;
     }
+
+    @Override
+    public void onStart() {
+
+        super.onStart();
+
+        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+
+        Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
+
+        if (c.moveToFirst()) {
+            while ( !c.isAfterLast() ) {
+                String tableName = c.getString(c.getColumnIndex("name"));
+
+                if(!tableName.equals("android_metadata") && !this.existButtons.contains(tableName)) {
+                    this.addActivityToRecordTab(tableName);
+                }
+
+                c.moveToNext();
+            }
+        }
+    }
+
 
     /**
      * Implement OnClickListener for the buttons.
@@ -98,7 +123,8 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                 /**
                  * Add the activity to the overall button layout.
                  */
-                this.addActivity(text);
+                this.addActivityToShowTab(text);
+                this.addActivityToRecordTab(text);
                 break;
             default:
 
@@ -107,7 +133,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                  */
                 Button btn = (Button) v;
                 String actName = btn.getText().toString();
-                Log.e("test","onclick");
+
                 DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                 String currentTime = dateFormat.format(new Date());
                 this.recordActivity(actName, currentTime);
@@ -124,29 +150,25 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
      *
      * @param text Name of new activity.
      */
-    private void addActivity(String text) {
+    private void addActivityToRecordTab(String text) {
 
         Activity act = getActivity();
         /**
          * Add the relevant activity to the database first.
          */
-        this.addActivityTable(text);
-
+        this.addActivityToDB(text);
+        this.existButtons.add(text);
         /**
          * Get the last row of buttons.
          * Deal with odd and even number of buttons accordingly.
          */
         TableLayout recordTable = (TableLayout) act.findViewById(R.id.recordButtonsTable);
-        TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
         TableRow recordLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
-        TableRow showLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
 
         if (recordLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
             this.addButtonAsFirst(act, recordTable, recordLastRow, text, true);
-            this.addButtonAsFirst(act, showTable, showLastRow, text, false);
         } else {
             this.addButtonAsSecond(recordLastRow, text);
-            this.addButtonAsSecond(showLastRow, text);
         }
 
         /**
@@ -161,6 +183,25 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
         EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
         inputBox.setText("");
         inputBox.clearFocus();
+    }
+
+    public void addActivityToShowTab(String text) {
+
+        Activity act = getActivity();
+
+        /**
+         * Get the last row of buttons.
+         * Deal with odd and even number of buttons accordingly.
+         */
+
+        TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
+        TableRow showLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
+
+        if (showLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
+            this.addButtonAsFirst(act, showTable, showLastRow, text, false);
+        } else {
+            this.addButtonAsSecond(showLastRow, text);
+        }
     }
 
     /**
@@ -208,9 +249,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
             ShowTab showTab = new ShowTab();
 
             left.setOnClickListener(showTab);
-            left.setOnLongClickListener(showTab);
             right.setOnClickListener(showTab);
-            right.setOnLongClickListener(showTab);
         }
 
 
@@ -361,7 +400,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
     }
 
-    private void addActivityTable(String activityName) {
+    private void addActivityToDB(String activityName) {
 
         activityName = activityName.replace(" ","");
 

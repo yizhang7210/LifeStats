@@ -14,8 +14,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
      */
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ActivitiesDB";
-    private static final String[] DEFAULT_TABLES =
-            {"Wakeup", "Gotobed", "Breakfast", "Lunch", "Dinner", "Workout", "Class"};
+    public static final String[] DEFAULT_TABLES =
+            {"Wakeup", "Gotobed", "Breakfast", "Lunch", "Dinner", "WorkOut"};
 
     /**
      * Constructor.
@@ -60,7 +60,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
      * @return The SQL command for creating that table.
      */
     public String getCreateTableCommand(String tableName){
-        String command = "CREATE TABLE "+tableName + "(TIME TEXT);";
+        String command = "CREATE TABLE IF NOT EXISTS "+tableName + "(TIME TEXT);";
         return(command);
     }
 }

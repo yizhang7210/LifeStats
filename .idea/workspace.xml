@@ -48,10 +48,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53714b1-c794-4a78-8794-bf1def096645" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/delete_act_popup.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LifeStats.iws" />
@@ -75,57 +76,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java">
+      <file leaf-file-name="RecordTab.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2662">
-              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="9328">
+              <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
+              <folding>
+                <element signature="e#9674#9754#0" expanded="true" />
+                <element signature="e#11294#11352#0" expanded="true" />
+                <element signature="e#11894#12042#0" expanded="true" />
+                <element signature="e#12031#12032#0" expanded="true" />
+                <element signature="e#12165#12534#0" expanded="true" />
+                <element signature="e#12523#12524#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDBHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23783784" vertical-offset="198" max-vertical-offset="1496">
+              <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordTab.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
+      <file leaf-file-name="ShowTab.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25225225" vertical-offset="5712" max-vertical-offset="8448">
-              <caret line="296" column="37" selection-start-line="296" selection-start-column="37" selection-end-line="296" selection-end-column="37" />
-              <folding>
-                <element signature="e#8600#8680#0" expanded="true" />
-                <element signature="e#10220#10278#0" expanded="true" />
-                <element signature="e#10820#10968#0" expanded="true" />
-                <element signature="e#10957#10958#0" expanded="true" />
-                <element signature="e#11091#11460#0" expanded="true" />
-                <element signature="e#11449#11450#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_act_popup.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/delete_act_popup.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.4838705" vertical-offset="374" max-vertical-offset="968">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-              <folding>
-                <element signature="e#935#948#0" expanded="true" />
-                <element signature="e#1184#1196#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="record_ack_popup.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_ack_popup.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.2580647" vertical-offset="66" max-vertical-offset="638">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="3476">
+              <caret line="66" column="83" selection-start-line="66" selection-start-column="83" selection-end-line="66" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -137,49 +119,38 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="178" max-vertical-offset="3036">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="55" />
+            <state vertical-scroll-proportion="-4.129032" vertical-offset="1698" max-vertical-offset="3652">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="109" selection-end-column="31" />
               <folding>
                 <element signature="e#1352#1374#0" expanded="true" />
                 <element signature="e#1925#1946#0" expanded="true" />
                 <element signature="e#2681#2706#0" expanded="true" />
                 <element signature="e#3260#3281#0" expanded="true" />
-                <element signature="e#4323#4349#0" expanded="true" />
-                <element signature="e#4986#5010#0" expanded="true" />
-                <element signature="e#5225#5248#0" expanded="true" />
+                <element signature="e#4015#4037#0" expanded="true" />
+                <element signature="e#4588#4611#0" expanded="true" />
+                <element signature="e#5655#5681#0" expanded="true" />
+                <element signature="e#6318#6342#0" expanded="true" />
+                <element signature="e#6557#6580#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.4" vertical-offset="108" max-vertical-offset="638">
-              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-              <folding />
-            </state>
+      <file leaf-file-name="show_tab.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDBHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="875" max-vertical-offset="1496">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowTab.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1298">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="21" />
+            <state vertical-scroll-proportion="-2.1290324" vertical-offset="1782" max-vertical-offset="2420">
+              <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
               <folding>
-                <element signature="e#1643#1644#0" expanded="true" />
-                <element signature="e#1671#1672#0" expanded="true" />
+                <element signature="e#910#932#0" expanded="true" />
+                <element signature="e#1403#1424#0" expanded="true" />
+                <element signature="e#2046#2071#0" expanded="true" />
+                <element signature="e#2545#2566#0" expanded="true" />
+                <element signature="e#3187#3209#0" expanded="true" />
+                <element signature="e#3680#3703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -821,13 +792,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/record_ack_popup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/delete_act_popup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java" />
       </list>
     </option>
   </component>
@@ -1427,7 +1398,11 @@
       <created>1420607792947</created>
       <updated>1420607792947</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added clear history functionality.">
+      <created>1420760964761</created>
+      <updated>1420760964761</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1448,7 +1423,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252595" sideWeight="0.49967846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325688" sideWeight="0.50032157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19516407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1499,7 +1474,8 @@
     <MESSAGE value="Implemented the &quot;add&quot; button for the record activity tab.&#10;Overrode back button.&#10;Record activity tab pretty much done.&#10;Will do the show activity and finally hookup to database.&#10;Should be done in a month.&#10;Not very happy at the moment." />
     <MESSAGE value="Now can add new button to the show activity tab as well. Surprisingly easy." />
     <MESSAGE value="Added write to database on click. Very good indeed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added write to database on click. Very good indeed." />
+    <MESSAGE value="Added clear history functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added clear history functionality." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1507,14 +1483,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="462">
-          <caret line="5" column="92" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="638">
@@ -1553,10 +1521,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1122">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding>
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,10 +1537,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="876" max-vertical-offset="1408">
           <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
-          <folding>
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1584,12 +1546,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="1122">
           <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding>
-            <element signature="e#8600#8680#0" expanded="true" />
-            <element signature="e#10220#10278#0" expanded="true" />
-            <element signature="e#10820#10968#0" expanded="true" />
-            <element signature="e#10957#10958#0" expanded="true" />
-            <element signature="e#11091#11460#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
+            <element signature="e#9674#9754#0" expanded="true" />
+            <element signature="e#11294#11352#0" expanded="true" />
+            <element signature="e#11894#12042#0" expanded="true" />
+            <element signature="e#12031#12032#0" expanded="true" />
+            <element signature="e#12165#12534#0" expanded="true" />
+            <element signature="e#12523#12524#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1606,9 +1568,11 @@
             <element signature="e#1925#1946#0" expanded="true" />
             <element signature="e#2681#2706#0" expanded="true" />
             <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
-            <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
+            <element signature="e#4015#4037#0" expanded="true" />
+            <element signature="e#4588#4611#0" expanded="true" />
+            <element signature="e#5655#5681#0" expanded="true" />
+            <element signature="e#6318#6342#0" expanded="true" />
+            <element signature="e#6557#6580#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1636,10 +1600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="638">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding>
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1648,12 +1609,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="550">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#8600#8680#0" expanded="true" />
-            <element signature="e#10220#10278#0" expanded="true" />
-            <element signature="e#10820#10968#0" expanded="true" />
-            <element signature="e#10957#10958#0" expanded="true" />
-            <element signature="e#11091#11460#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
+            <element signature="e#9674#9754#0" expanded="true" />
+            <element signature="e#11294#11352#0" expanded="true" />
+            <element signature="e#11894#12042#0" expanded="true" />
+            <element signature="e#12031#12032#0" expanded="true" />
+            <element signature="e#12165#12534#0" expanded="true" />
+            <element signature="e#12523#12524#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1671,12 +1632,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="616">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding>
-            <element signature="e#8600#8680#0" expanded="true" />
-            <element signature="e#10220#10278#0" expanded="true" />
-            <element signature="e#10820#10968#0" expanded="true" />
-            <element signature="e#10957#10958#0" expanded="true" />
-            <element signature="e#11091#11460#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
+            <element signature="e#9674#9754#0" expanded="true" />
+            <element signature="e#11294#11352#0" expanded="true" />
+            <element signature="e#11894#12042#0" expanded="true" />
+            <element signature="e#12031#12032#0" expanded="true" />
+            <element signature="e#12165#12534#0" expanded="true" />
+            <element signature="e#12523#12524#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1712,9 +1673,11 @@
             <element signature="e#1925#1946#0" expanded="true" />
             <element signature="e#2681#2706#0" expanded="true" />
             <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
-            <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
+            <element signature="e#4015#4037#0" expanded="true" />
+            <element signature="e#4588#4611#0" expanded="true" />
+            <element signature="e#5655#5681#0" expanded="true" />
+            <element signature="e#6318#6342#0" expanded="true" />
+            <element signature="e#6557#6580#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1746,9 +1709,11 @@
             <element signature="e#1925#1946#0" expanded="true" />
             <element signature="e#2681#2706#0" expanded="true" />
             <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
-            <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
+            <element signature="e#4015#4037#0" expanded="true" />
+            <element signature="e#4588#4611#0" expanded="true" />
+            <element signature="e#5655#5681#0" expanded="true" />
+            <element signature="e#6318#6342#0" expanded="true" />
+            <element signature="e#6557#6580#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1798,9 +1763,11 @@
             <element signature="e#1925#1946#0" expanded="true" />
             <element signature="e#2681#2706#0" expanded="true" />
             <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
-            <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
+            <element signature="e#4015#4037#0" expanded="true" />
+            <element signature="e#4588#4611#0" expanded="true" />
+            <element signature="e#5655#5681#0" expanded="true" />
+            <element signature="e#6318#6342#0" expanded="true" />
+            <element signature="e#6557#6580#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1907,17 +1874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19465649" vertical-offset="954" max-vertical-offset="1782">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Tools/android-sdk/sources/android-21/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="101235" max-vertical-offset="450208">
@@ -1937,33 +1893,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/../../Tools/android-sdk/sources/android-21/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="178" max-vertical-offset="3036">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="55" />
-          <folding>
-            <element signature="e#1352#1374#0" expanded="true" />
-            <element signature="e#1925#1946#0" expanded="true" />
-            <element signature="e#2681#2706#0" expanded="true" />
-            <element signature="e#3260#3281#0" expanded="true" />
-            <element signature="e#4323#4349#0" expanded="true" />
-            <element signature="e#4986#5010#0" expanded="true" />
-            <element signature="e#5225#5248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1298">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="21" />
-          <folding>
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="12179" max-vertical-offset="19140">
+          <caret line="611" column="0" selection-start-line="611" selection-start-column="0" selection-end-line="611" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1972,7 +1906,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.4838705" vertical-offset="374" max-vertical-offset="968">
+        <state vertical-scroll-proportion="0.79770994" vertical-offset="374" max-vertical-offset="968">
           <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
             <element signature="e#935#948#0" expanded="true" />
@@ -1981,42 +1915,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.4" vertical-offset="108" max-vertical-offset="638">
-          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2173" max-vertical-offset="2728">
+        <state vertical-scroll-proportion="0.990991" vertical-offset="330" max-vertical-offset="2662">
           <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="875" max-vertical-offset="1496">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25225225" vertical-offset="5712" max-vertical-offset="8448">
-          <caret line="296" column="37" selection-start-line="296" selection-start-column="37" selection-end-line="296" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="9328">
+          <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
           <folding>
-            <element signature="e#8600#8680#0" expanded="true" />
-            <element signature="e#10220#10278#0" expanded="true" />
-            <element signature="e#10820#10968#0" expanded="true" />
-            <element signature="e#10957#10958#0" expanded="true" />
-            <element signature="e#11091#11460#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
+            <element signature="e#9674#9754#0" expanded="true" />
+            <element signature="e#11294#11352#0" expanded="true" />
+            <element signature="e#11894#12042#0" expanded="true" />
+            <element signature="e#12031#12032#0" expanded="true" />
+            <element signature="e#12165#12534#0" expanded="true" />
+            <element signature="e#12523#12524#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.44" vertical-offset="0" max-vertical-offset="638">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="3476">
+          <caret line="66" column="83" selection-start-line="66" selection-start-column="83" selection-end-line="66" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.129032" vertical-offset="1698" max-vertical-offset="3652">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="109" selection-end-column="31" />
+          <folding>
+            <element signature="e#1352#1374#0" expanded="true" />
+            <element signature="e#1925#1946#0" expanded="true" />
+            <element signature="e#2681#2706#0" expanded="true" />
+            <element signature="e#3260#3281#0" expanded="true" />
+            <element signature="e#4015#4037#0" expanded="true" />
+            <element signature="e#4588#4611#0" expanded="true" />
+            <element signature="e#5655#5681#0" expanded="true" />
+            <element signature="e#6318#6342#0" expanded="true" />
+            <element signature="e#6557#6580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/show_tab.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1290324" vertical-offset="1782" max-vertical-offset="2420">
+          <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
+          <folding>
+            <element signature="e#910#932#0" expanded="true" />
+            <element signature="e#1403#1424#0" expanded="true" />
+            <element signature="e#2046#2071#0" expanded="true" />
+            <element signature="e#2545#2566#0" expanded="true" />
+            <element signature="e#3187#3209#0" expanded="true" />
+            <element signature="e#3680#3703#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23783784" vertical-offset="198" max-vertical-offset="1496">
+          <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
