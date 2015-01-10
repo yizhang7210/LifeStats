@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -16,12 +17,16 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Provides the fragment for the "Show Activities" Tab.
@@ -173,7 +178,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          * Get the button text, i.e. name of the database table.
          */
         Button btn = (Button) v;
-        String tableName = btn.getText().toString().replace(" ", "");
+        String actName = btn.getText().toString();
+        String tableName = actName.replace(" ", "");
 
         /**
          * Initialize the array for the stored times and iterate through.
@@ -183,34 +189,92 @@ public class ShowTab extends Fragment implements View.OnClickListener {
         SQLiteDatabase db = RecordTab.dbHelper.getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + tableName, null);
 
-        if (c.moveToFirst()) {
+        if (c.getCount() > 1) {
+
+            c.moveToFirst();
+
             while (!c.isAfterLast()) {
                 String recordedTime = c.getString(c.getColumnIndex("TIME"));
                 timeHist.add(recordedTime);
                 c.moveToNext();
             }
+
+            /**
+             * Plot the graph.
+             */
+            this.plotGraph(timeHist, actName);
+
+        } else {
+            this.warnNoData(actName);
         }
-
-        /**
-         * Plot the graph.
-         */
-        this.plotGraph(timeHist);
-
 
     }
 
-    private void plotGraph(ArrayList<String> timeHist) {
+    private void warnNoData(String actName) {
+
+        /**
+         * Get current activity and inflate the Popup Window layout.
+         */
+        Activity currentAct = getActivity();
+        View popupView = currentAct.getLayoutInflater().inflate(R.layout.record_ack_popup, null);
+
+        /**
+         * Define the Popup Window.
+         */
+        final PopupWindow pw = new PopupWindow(
+                popupView,
+                TableLayout.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        /**
+         * Get current display message.
+         */
+        String warnMessage = getString(R.string.warnNoData, actName);
+
+        /**
+         * Get the corresponding view and add the text.
+         */
+        TextView textView = (TextView) popupView.findViewById(R.id.recordAckText);
+        textView.setText(warnMessage);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        /**
+         * Add the dismiss button to the Popup Window.
+         */
+        Button buttonOK = (Button) popupView.findViewById(R.id.recordAckButton);
+        buttonOK.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pw.dismiss();
+            }
+        });
+
+        /**
+         * Add the Popup Window itself.
+         */
+        pw.showAtLocation(popupView, Gravity.CENTER, 0, 0);
+
+    }
+
+    private void plotGraph(ArrayList<String> timeHist, String actName) {
 
         /**
          * Use again popup window. Initialize it.
          */
         Activity currentAct = getActivity();
+
+        View buttonsTable = currentAct.findViewById(R.id.showButtonsTable);
+
+        int height = buttonsTable.getMeasuredHeight();
+        int width = buttonsTable.getMeasuredWidth();
+
         View graphView = currentAct.getLayoutInflater().inflate(R.layout.show_graph, null);
 
         final PopupWindow pw = new PopupWindow(
                 graphView,
-                TableLayout.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
+                width,
+                height);
 
         /**
          * Set the properties.
@@ -240,12 +304,10 @@ public class ShowTab extends Fragment implements View.OnClickListener {
 
         int size = timeHist.size();
         DataPoint[] dataPoints = new DataPoint[size];
-        for (
-                int i = 0;
-                i < size; ++i)
 
-        {
-            dataPoints[i] = new DataPoint(i, this.dateToDouble(timeHist.get(i)));
+        for (int i = 0; i < size; ++i) {
+            String dateTime = timeHist.get(i);
+            dataPoints[i] = new DataPoint(this.getDateFromString(dateTime), this.getTimeFromString(dateTime));
         }
 
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
@@ -255,7 +317,67 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          */
         graph.addSeries(series);
 
-        pw.showAtLocation(graphView, Gravity.CENTER, 0, 0);
+        /**
+         * Set title.
+         */
+        graph.setTitle("Your recorded history of " + actName + ".");
+        graph.setTitleTextSize(55);
+
+
+        TimeDateFormatter formatter = new TimeDateFormatter(getActivity());
+        /**
+         * The y-axis.
+         */
+        double maxY = Double.NEGATIVE_INFINITY;
+        double minY = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < dataPoints.length; ++i) {
+            double thisY = dataPoints[i].getY();
+
+            if (thisY > maxY) {
+                maxY = thisY;
+            }
+
+            if (thisY < minY) {
+                minY = thisY;
+            }
+        }
+
+        graph.getViewport().setMinY(Math.floor(2 * minY) / 2);
+        graph.getViewport().setMaxY(Math.ceil(2 * maxY) / 2);
+        graph.getViewport().setYAxisBoundsManual(true);
+
+        /**
+         * The x-axis.
+         */
+        graph.getGridLabelRenderer().setLabelFormatter(formatter);
+        graph.getGridLabelRenderer().setNumHorizontalLabels(2);
+
+        graph.getViewport().setMinX(dataPoints[0].getX());
+        graph.getViewport().setMaxX(dataPoints[dataPoints.length - 1].getX());
+        graph.getViewport().setXAxisBoundsManual(true);
+
+        pw.showAtLocation(graphView, Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 0, 0);
+
+    }
+
+    private Date getDateFromString(String dateTimeString) {
+
+        String dateFormatString = getString(R.string.dateTimeFormat);
+
+        if (dateTimeString.length() != dateFormatString.length()) {
+            throw new RuntimeException("Recorded time in database has wrong format. " +
+                    "It should be " + dateFormatString);
+        }
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.dateTimeFormat));
+
+        try {
+            Date date = dateFormat.parse(dateTimeString);
+
+            return (date);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -263,20 +385,22 @@ public class ShowTab extends Fragment implements View.OnClickListener {
      * Convert a string of date of the form HH:mm:ss to a number between 0 and -25.
      * Want morning to be plotted higher and evenings lower.
      *
-     * @param timeString The string representing the time.
+     * @param dateTimeString The string representing the time.
      * @return Converted number representing the time.
      */
 
-    private double dateToDouble(String timeString) {
+    private double getTimeFromString(String dateTimeString) {
 
-        if (timeString.length() != 8) {
-            throw new RuntimeException("Recorded time in database has wrong format" +
-                    "Should be HH:mm:ss");
+        String dateFormatString = getString(R.string.dateTimeFormat);
+
+        if (dateTimeString.length() != dateFormatString.length()) {
+            throw new RuntimeException("Recorded time in database has wrong format. " +
+                    "It should be " + dateFormatString);
         }
 
-        double hour = Double.parseDouble(timeString.substring(0, 2));
-        double min = Double.parseDouble(timeString.substring(3, 5));
-        double sec = Double.parseDouble(timeString.substring(6, 8));
+        double hour = Double.parseDouble(dateTimeString.substring(11, 13));
+        double min = Double.parseDouble(dateTimeString.substring(14, 16));
+        double sec = Double.parseDouble(dateTimeString.substring(17, 19));
 
         double time = -(hour + min / 60 + sec / 3600);
 

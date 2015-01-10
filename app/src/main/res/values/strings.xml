@@ -21,4 +21,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="column_name_time">TIME</string>
+    <string name="warnNoData">You have no/too few past activities of\n%1$s.</string>
+    <string name="dateTimeFormat">yyyy:MM:dd:HH:mm:ss</string>
+    <string name="dateFormat">yyyy:MM:dd</string>
+    <string name="timeFormat">HH:mm:ss</string>
 </resources>

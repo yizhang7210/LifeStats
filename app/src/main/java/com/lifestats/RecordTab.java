@@ -134,14 +134,18 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                 Button btn = (Button) v;
                 String actName = btn.getText().toString();
 
-                DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-                String currentTime = dateFormat.format(new Date());
-                this.recordActivity(actName, currentTime);
+                String dateTimeFormat = getString(R.string.dateTimeFormat);
+                String timeFormat = getString(R.string.timeFormat);
+
+                DateFormat dateFormatToRecord = new SimpleDateFormat(dateTimeFormat);
+                DateFormat dateFormatToShow = new SimpleDateFormat(timeFormat);
+                Date now = new Date();
+                this.recordActivity(actName, dateFormatToRecord.format(now));
                 this.checkDB(actName);//Debug
                 /**
                  * Produce the record successful message.
                  */
-                this.showRecordPopup(btn, currentTime);
+                this.showRecordPopup(btn, dateFormatToShow.format(now));
         }
     }
 
