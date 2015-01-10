@@ -20,4 +20,5 @@
     <string name="confirmDelete">Are you sure you want to clear the history of activity\n%1$s?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="column_name_time">TIME</string>
 </resources>
