@@ -10,6 +10,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.support.v13.app.FragmentStatePagerAdapter;
+import android.view.ViewGroup;
 
 /**
  * Main user interface.
@@ -42,6 +43,7 @@ public class MainActivity extends FragmentActivity {
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
+        mPager.setOffscreenPageLimit(0);
 
         /**
          * Change selected Action Bar title when swipe left or right.
@@ -129,5 +131,11 @@ public class MainActivity extends FragmentActivity {
         public int getCount() {
             return NUM_PAGES;
         }
+
+        @Override
+        public int getItemPosition(Object obj) {
+            return POSITION_NONE;
+        }
+
     }
 }

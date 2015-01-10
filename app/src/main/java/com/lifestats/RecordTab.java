@@ -2,11 +2,14 @@ package com.lifestats;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -90,7 +93,9 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                 String dbTableName = c.getString(c.getColumnIndex("name"));
 
                 if(!dbTableName.equals("android_metadata") && !ButtonHelper.existButtons.contains(dbTableName)) {
-                    ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.RECORD_TAB);
+                    Button savedBtn = ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.RECORD_TAB);
+                    savedBtn.setOnClickListener(this);
+                    savedBtn.setOnLongClickListener(this);
                 }
 
                 c.moveToNext();
@@ -107,61 +112,62 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
     public void onClick(View v) {
         int buttonId = v.getId();
 
-        switch (buttonId) {
-            case R.id.addActButton:
+        if (buttonId == R.id.addActButton) {
 
-                /**
-                 * Get button name from EditText.
-                 */
-                Activity act = getActivity();
-                EditText textBox = (EditText) act.findViewById(R.id.addActivityBox);
-                String text = textBox.getText().toString();
+            Log.e("adding new button", "wtf");
+            /**
+             * Get button name from EditText.
+             */
+            Activity act = getActivity();
+            EditText textBox = (EditText) act.findViewById(R.id.addActivityBox);
+            String text = textBox.getText().toString();
 
-                /**
-                 * Add the button to exist buttons.
-                 */
-                ButtonHelper.existButtons.add(text);
+            /**
+             * Add the button to exist buttons.
+             */
+            ButtonHelper.existButtons.add(text.replace(" ", "_"));
 
-                /**
-                 * Add the activity to the overall button layout.
-                 */
-                ButtonHelper.addButton(act,text,true,ButtonHelper.RECORD_TAB);
-                ButtonHelper.addButton(act,text,true,ButtonHelper.SHOW_TAB);
+            /**
+             * Add the activity to the overall button layout.
+             */
 
-                /**
-                 * Hide the soft keyboard.
-                 */
-                InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+            Button newBtnR = ButtonHelper.addButton(act, text, true, ButtonHelper.RECORD_TAB);
+            Button newBtnS = ButtonHelper.addButton(act, text, true, ButtonHelper.SHOW_TAB);
 
-                /**
-                 * Clear the edit box.
-                 */
-                EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
-                inputBox.setText("");
-                inputBox.clearFocus();
-                break;
+            newBtnR.setOnClickListener(this);
+            newBtnR.setOnLongClickListener(this);
 
-            default:
+            /**
+             * Hide the soft keyboard.
+             */
+            InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
-                /**
-                 * Get the name of the activity, record it to database.
-                 */
-                Button btn = (Button) v;
-                String actName = btn.getText().toString();
+            /**
+             * Clear the edit box.
+             */
+            EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
+            inputBox.setText("");
+            inputBox.clearFocus();
+        }else {
+            /**
+             * Get the name of the activity, record it to database.
+             */
+            Button btn = (Button) v;
+            String actName = btn.getText().toString();
 
-                String dateTimeFormat = getString(R.string.dateTimeFormat);
-                String timeFormat = getString(R.string.timeFormat);
+            String dateTimeFormat = getString(R.string.dateTimeFormat);
+            String timeFormat = getString(R.string.timeFormat);
 
-                DateFormat dateFormatToRecord = new SimpleDateFormat(dateTimeFormat);
-                DateFormat dateFormatToShow = new SimpleDateFormat(timeFormat);
-                Date now = new Date();
-                this.recordActivity(actName, dateFormatToRecord.format(now));
-                this.checkDB(actName);//Debug
-                /**
-                 * Produce the record successful message.
-                 */
-                this.showRecordPopup(btn, dateFormatToShow.format(now));
+            DateFormat dateFormatToRecord = new SimpleDateFormat(dateTimeFormat);
+            DateFormat dateFormatToShow = new SimpleDateFormat(timeFormat);
+            Date now = new Date();
+            this.recordActivity(actName, dateFormatToRecord.format(now));
+            this.checkDB(actName);//Debug
+            /**
+             * Produce the record successful message.
+             */
+            this.showRecordPopup(btn, dateFormatToShow.format(now));
         }
     }
 

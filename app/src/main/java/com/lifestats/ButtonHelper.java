@@ -3,14 +3,20 @@ package com.lifestats;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by yzhang on 10/01/15.
@@ -20,12 +26,13 @@ public class ButtonHelper {
     public static final int RECORD_TAB = 0;
     public static final int SHOW_TAB = 1;
 
-    public static void addButton(Activity act, String dbTableName, boolean isNew, int whichTab) {
+    public static Button addButton(Activity act, String dbTableName, boolean isNew, int whichTab) {
         /**
          * Get the last row of buttons.
          * Deal with odd and even number of buttons accordingly.
          */
 
+        Button btn;
         int tableId;
         switch (whichTab){
             case ButtonHelper.RECORD_TAB:
@@ -43,15 +50,16 @@ public class ButtonHelper {
 
         String buttonName = dbTableName.replace("_"," ");
         if (lastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            addButtonAsFirst(act, table, lastRow, buttonName, whichTab);
+            btn = addButtonAsFirst(act, table, lastRow, buttonName, whichTab);
         } else {
-            addButtonAsSecond(lastRow, buttonName);
+            btn = addButtonAsSecond(lastRow, buttonName);
         }
 
         if(isNew){
             ButtonHelper.addActivityToDB(buttonName);
         }
 
+        return btn;
     }
 
     private static void addActivityToDB(String buttonName) {
@@ -63,7 +71,7 @@ public class ButtonHelper {
         db.execSQL(RecordTab.dbHelper.getCreateTableCommand(dbName));
     }
 
-    private static void addButtonAsFirst(Activity act, TableLayout table,
+    private static Button addButtonAsFirst(Activity act, TableLayout table,
                                          TableRow lastRow, String actName, int whichTab) {
 
         /**
@@ -91,6 +99,7 @@ public class ButtonHelper {
          * Add OnClickListener and OnLongClickListener
          */
 
+        /*
         switch (whichTab){
             case ButtonHelper.RECORD_TAB:
 
@@ -106,6 +115,7 @@ public class ButtonHelper {
                 left.setOnClickListener(s);
                 right.setOnClickListener(s);
         }
+        */
 
         /**
          * Add them on.
@@ -115,9 +125,10 @@ public class ButtonHelper {
 
         table.addView(newRow);
 
+        return left;
     }
 
-    private static void addButtonAsSecond(TableRow theRow, String tableName) {
+    private static Button addButtonAsSecond(TableRow theRow, String tableName) {
 
         /**
          * Get the second button. Set text and visibility.
@@ -126,5 +137,7 @@ public class ButtonHelper {
 
         btn.setText(tableName);
         btn.setVisibility(View.VISIBLE);
+
+        return btn;
     }
 }

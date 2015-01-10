@@ -34,7 +34,6 @@ import java.util.Date;
  */
 public class ShowTab extends Fragment implements View.OnClickListener {
 
-
     /**
      * onCreateView: inflate the UI and register the buttons.
      *
@@ -67,8 +66,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onResume() {
+        super.onResume();
 
         SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
 
@@ -79,7 +78,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
                 String dbTableName = c.getString(c.getColumnIndex("name"));
 
                 if (!dbTableName.equals("android_metadata") && !ButtonHelper.existButtons.contains(dbTableName)) {
-                    ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.SHOW_TAB);
+                    Button btn = ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.SHOW_TAB);
+                    btn.setOnClickListener(this);
                 }
 
                 c.moveToNext();
@@ -340,4 +340,5 @@ public class ShowTab extends Fragment implements View.OnClickListener {
 
         return (time);
     }
+
 }
