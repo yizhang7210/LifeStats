@@ -2,7 +2,6 @@ package com.lifestats;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -264,8 +262,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          */
         double maxY = Double.NEGATIVE_INFINITY;
         double minY = Double.POSITIVE_INFINITY;
-        for (int i = 0; i < dataPoints.length; ++i) {
-            double thisY = dataPoints[i].getY();
+        for (DataPoint dataPoint : dataPoints) {
+            double thisY = dataPoint.getY();
 
             if (thisY > maxY) {
                 maxY = thisY;
@@ -306,9 +304,7 @@ public class ShowTab extends Fragment implements View.OnClickListener {
         SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.dateTimeFormat));
 
         try {
-            Date date = dateFormat.parse(dateTimeString);
-
-            return (date);
+            return (dateFormat.parse(dateTimeString));
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
@@ -336,9 +332,7 @@ public class ShowTab extends Fragment implements View.OnClickListener {
         double min = Double.parseDouble(dateTimeString.substring(14, 16));
         double sec = Double.parseDouble(dateTimeString.substring(17, 19));
 
-        double time = -(hour + min / 60 + sec / 3600);
-
-        return (time);
+        return (-(hour + min / 60 + sec / 3600));
     }
 
 }

@@ -2,14 +2,11 @@ package com.lifestats;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -21,7 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -39,7 +35,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
     @Override
     public void onAttach(Activity activity){
         super.onAttach(activity);
-        this.dbHelper = new MyDBHelper(activity);
+        RecordTab.dbHelper = new MyDBHelper(activity);
     }
 
     /**
@@ -132,7 +128,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
              */
 
             Button newBtnR = ButtonHelper.addButton(act, text, true, ButtonHelper.RECORD_TAB);
-            Button newBtnS = ButtonHelper.addButton(act, text, true, ButtonHelper.SHOW_TAB);
+            //Button newBtnS = ButtonHelper.addButton(act, text, true, ButtonHelper.SHOW_TAB);
 
             newBtnR.setOnClickListener(this);
             newBtnR.setOnLongClickListener(this);
@@ -295,7 +291,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
         tableName = tableName.replace(" ","_");
 
-        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+        SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
 
         ContentValues now = new ContentValues();
 
@@ -306,7 +302,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
     }
 
     private void checkDB(String tableName){
-        SQLiteDatabase check = this.dbHelper.getReadableDatabase();
+        SQLiteDatabase check = RecordTab.dbHelper.getReadableDatabase();
 
         tableName = tableName.replace(" ", "_");
 
