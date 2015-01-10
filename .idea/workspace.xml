@@ -48,16 +48,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53714b1-c794-4a78-8794-bf1def096645" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/show_graph.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v13_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/yzhang.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/yzhang.xml" />
     </list>
     <ignored path="LifeStats.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -131,9 +122,10 @@
       <file leaf-file-name="ShowTab.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.088288285" vertical-offset="4439" max-vertical-offset="5940">
-              <caret line="225" column="59" selection-start-line="225" selection-start-column="59" selection-end-line="225" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.28648648" vertical-offset="4439" max-vertical-offset="5940">
+              <caret line="230" column="14" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
               <folding>
+                <element signature="e#6554#6856#0" expanded="true" />
                 <element signature="e#6845#6846#0" expanded="true" />
               </folding>
             </state>
@@ -1401,7 +1393,11 @@
       <created>1420771368322</created>
       <updated>1420771368322</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Graph plotting pretty much good. Need tidying up. But all functionalities are there.">
+      <created>1420862045056</created>
+      <updated>1420862045056</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1422,7 +1418,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252595" sideWeight="0.49967846" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32295272" sideWeight="0.49967846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325688" sideWeight="0.50032157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19516407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1475,7 +1471,8 @@
     <MESSAGE value="Added write to database on click. Very good indeed." />
     <MESSAGE value="Added clear history functionality." />
     <MESSAGE value="Now have persistent buttons. Yay!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now have persistent buttons. Yay!" />
+    <MESSAGE value="Graph plotting pretty much good. Need tidying up. But all functionalities are there." />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph plotting pretty much good. Need tidying up. But all functionalities are there." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1504,6 +1501,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1122">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding>
+            <element signature="e#6554#6856#0" expanded="true" />
             <element signature="e#6845#6846#0" expanded="true" />
           </folding>
         </state>
@@ -1521,6 +1519,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="876" max-vertical-offset="1408">
           <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
           <folding>
+            <element signature="e#6554#6856#0" expanded="true" />
             <element signature="e#6845#6846#0" expanded="true" />
           </folding>
         </state>
@@ -1570,6 +1569,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="638">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding>
+            <element signature="e#6554#6856#0" expanded="true" />
             <element signature="e#6845#6846#0" expanded="true" />
           </folding>
         </state>
@@ -1921,9 +1921,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.088288285" vertical-offset="4439" max-vertical-offset="5940">
-          <caret line="225" column="59" selection-start-line="225" selection-start-column="59" selection-end-line="225" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.28648648" vertical-offset="4439" max-vertical-offset="5940">
+          <caret line="230" column="14" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
           <folding>
+            <element signature="e#6554#6856#0" expanded="true" />
             <element signature="e#6845#6846#0" expanded="true" />
           </folding>
         </state>
