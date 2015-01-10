@@ -32,7 +32,6 @@ import java.util.Date;
 public class RecordTab extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
     public static MyDBHelper dbHelper;
-    public static ArrayList<String> existButtons = new ArrayList<>();
 
     @Override
     public void onAttach(Activity activity){
@@ -67,7 +66,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
             button.setOnClickListener(this);
             button.setOnLongClickListener(this);
             Log.e("button", button.getText().toString());
-            this.existButtons.add(button.getText().toString().replace(" ", ""));
+            ButtonHelper.existButtons.add(button.getText().toString().replace(" ", "_"));
         }
 
         /**
@@ -80,26 +79,24 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
     @Override
     public void onStart() {
-
         super.onStart();
 
-        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+        SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
 
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
 
         if (c.moveToFirst()) {
             while ( !c.isAfterLast() ) {
-                String tableName = c.getString(c.getColumnIndex("name"));
+                String dbTableName = c.getString(c.getColumnIndex("name"));
 
-                if(!tableName.equals("android_metadata") && !this.existButtons.contains(tableName)) {
-                    this.addActivityToRecordTab(tableName);
+                if(!dbTableName.equals("android_metadata") && !ButtonHelper.existButtons.contains(dbTableName)) {
+                    ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.RECORD_TAB);
                 }
 
                 c.moveToNext();
             }
         }
     }
-
 
     /**
      * Implement OnClickListener for the buttons.
@@ -116,16 +113,35 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                 /**
                  * Get button name from EditText.
                  */
-                Activity currentAct = getActivity();
-                EditText textBox = (EditText) currentAct.findViewById(R.id.addActivityBox);
+                Activity act = getActivity();
+                EditText textBox = (EditText) act.findViewById(R.id.addActivityBox);
                 String text = textBox.getText().toString();
+
+                /**
+                 * Add the button to exist buttons.
+                 */
+                ButtonHelper.existButtons.add(text);
 
                 /**
                  * Add the activity to the overall button layout.
                  */
-                this.addActivityToShowTab(text);
-                this.addActivityToRecordTab(text);
+                ButtonHelper.addButton(act,text,true,ButtonHelper.RECORD_TAB);
+                ButtonHelper.addButton(act,text,true,ButtonHelper.SHOW_TAB);
+
+                /**
+                 * Hide the soft keyboard.
+                 */
+                InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                /**
+                 * Clear the edit box.
+                 */
+                EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
+                inputBox.setText("");
+                inputBox.clearFocus();
                 break;
+
             default:
 
                 /**
@@ -148,141 +164,6 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
                 this.showRecordPopup(btn, dateFormatToShow.format(now));
         }
     }
-
-    /**
-     * Add a new button for customized activities.
-     *
-     * @param text Name of new activity.
-     */
-    private void addActivityToRecordTab(String text) {
-
-        Activity act = getActivity();
-        /**
-         * Add the relevant activity to the database first.
-         */
-        this.addActivityToDB(text);
-        this.existButtons.add(text);
-        /**
-         * Get the last row of buttons.
-         * Deal with odd and even number of buttons accordingly.
-         */
-        TableLayout recordTable = (TableLayout) act.findViewById(R.id.recordButtonsTable);
-        TableRow recordLastRow = (TableRow) recordTable.getChildAt(recordTable.getChildCount() - 1);
-
-        if (recordLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            this.addButtonAsFirst(act, recordTable, recordLastRow, text, true);
-        } else {
-            this.addButtonAsSecond(recordLastRow, text);
-        }
-
-        /**
-         * Hide the soft keyboard.
-         */
-        InputMethodManager imm = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(recordTable.getWindowToken(), 0);
-
-        /**
-         * Clear the edit box.
-         */
-        EditText inputBox = (EditText) act.findViewById(R.id.addActivityBox);
-        inputBox.setText("");
-        inputBox.clearFocus();
-    }
-
-    public void addActivityToShowTab(String text) {
-
-        Activity act = getActivity();
-
-        /**
-         * Get the last row of buttons.
-         * Deal with odd and even number of buttons accordingly.
-         */
-
-        TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
-        TableRow showLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
-
-        if (showLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            this.addButtonAsFirst(act, showTable, showLastRow, text, false);
-        } else {
-            this.addButtonAsSecond(showLastRow, text);
-        }
-    }
-
-    /**
-     * Deals with add activity if there are even number of buttons.
-     *
-     * @param act      Current Activity.
-     * @param theTable The table containing the buttons.
-     * @param lastRow  The previous complete row with 2 buttons.
-     * @param text     The name of the new activity.
-     */
-    private void addButtonAsFirst(Context act, TableLayout theTable,
-                                  TableRow lastRow, String text, Boolean isOnRecordTab) {
-
-        /**
-         * Create new row for the table.
-         */
-        TableRow newRow = new TableRow(act);
-        newRow.setLayoutParams(lastRow.getLayoutParams());
-
-        /**
-         * Create both buttons. Set the second invisible.
-         */
-        Button old = (Button) lastRow.getChildAt(0);
-
-        Button left = new Button(act);
-        left.setText(text);
-        left.setLayoutParams(old.getLayoutParams());
-
-        Button right = new Button(act);
-        right.setText("TempButton");
-        right.setLayoutParams(old.getLayoutParams());
-
-        right.setVisibility(View.INVISIBLE);
-
-        /**
-         * Add OnClickListener and OnLongClickListener
-         */
-        if(isOnRecordTab){
-            left.setOnClickListener(this);
-            left.setOnLongClickListener(this);
-            right.setOnClickListener(this);
-            right.setOnLongClickListener(this);
-        }else{
-
-            ShowTab showTab = new ShowTab();
-
-            left.setOnClickListener(showTab);
-            right.setOnClickListener(showTab);
-        }
-
-
-        /**
-         * Add them on.
-         */
-        newRow.addView(left);
-        newRow.addView(right);
-
-        theTable.addView(newRow);
-    }
-
-    /**
-     * Deal with add activity if there are odd number of buttons.
-     *
-     * @param theRow The current row that already has 1 button.
-     * @param text   The name of the new activity.
-     */
-    private void addButtonAsSecond(TableRow theRow, String text) {
-
-        /**
-         * Get the second button. Set text and visibility.
-         */
-        Button btn = (Button) theRow.getChildAt(1);
-
-        btn.setText(text);
-        btn.setVisibility(View.VISIBLE);
-    }
-
 
     /**
      * Create a Popup Window acknowledging recording the activity.
@@ -385,7 +266,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
             @Override
             public void onClick(View v) {
 
-                String dbName = buttonToDelete.getText().toString().replace(" ","");
+                String dbName = buttonToDelete.getText().toString().replace(" ","_");
 
                 SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
 
@@ -404,19 +285,9 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
     }
 
-    private void addActivityToDB(String activityName) {
-
-        activityName = activityName.replace(" ","");
-
-        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
-
-        db.execSQL(this.dbHelper.getCreateTableCommand(activityName));
-
-    }
-
     private void recordActivity(String tableName, String time){
 
-        tableName = tableName.replace(" ","");
+        tableName = tableName.replace(" ","_");
 
         SQLiteDatabase db = this.dbHelper.getWritableDatabase();
 
@@ -431,7 +302,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
     private void checkDB(String tableName){
         SQLiteDatabase check = this.dbHelper.getReadableDatabase();
 
-        tableName = tableName.replace(" ", "");
+        tableName = tableName.replace(" ", "_");
 
         Log.e("SQL", tableName);
 

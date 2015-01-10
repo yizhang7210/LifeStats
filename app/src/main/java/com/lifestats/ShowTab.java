@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,6 +33,7 @@ import java.util.Date;
  * Provides the fragment for the "Show Activities" Tab.
  */
 public class ShowTab extends Fragment implements View.OnClickListener {
+
 
     /**
      * onCreateView: inflate the UI and register the buttons.
@@ -66,7 +68,6 @@ public class ShowTab extends Fragment implements View.OnClickListener {
 
     @Override
     public void onStart() {
-
         super.onStart();
 
         SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
@@ -75,95 +76,16 @@ public class ShowTab extends Fragment implements View.OnClickListener {
 
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
-                String tableName = c.getString(c.getColumnIndex("name"));
+                String dbTableName = c.getString(c.getColumnIndex("name"));
 
-                if (!tableName.equals("android_metadata") && !RecordTab.existButtons.contains(tableName)) {
-
-                    RecordTab r = new RecordTab();
-
-                    this.addActivityToShowTab(tableName);
+                if (!dbTableName.equals("android_metadata") && !ButtonHelper.existButtons.contains(dbTableName)) {
+                    ButtonHelper.addButton(getActivity(),dbTableName,false,ButtonHelper.SHOW_TAB);
                 }
 
                 c.moveToNext();
             }
         }
-    }
-
-    private void addActivityToShowTab(String text) {
-
-        Activity act = getActivity();
-
-        /**
-         * Get the last row of buttons.
-         * Deal with odd and even number of buttons accordingly.
-         */
-
-        TableLayout showTable = (TableLayout) act.findViewById(R.id.showButtonsTable);
-        TableRow showLastRow = (TableRow) showTable.getChildAt(showTable.getChildCount() - 1);
-
-        if (showLastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            this.addButtonAsFirst(act, showTable, showLastRow, text);
-        } else {
-            this.addButtonAsSecond(showLastRow, text);
-        }
-    }
-
-
-    private void addButtonAsFirst(Context act, TableLayout theTable, TableRow lastRow, String text) {
-
-        /**
-         * Create new row for the table.
-         */
-        TableRow newRow = new TableRow(act);
-        newRow.setLayoutParams(lastRow.getLayoutParams());
-
-        /**
-         * Create both buttons. Set the second invisible.
-         */
-        Button old = (Button) lastRow.getChildAt(0);
-
-        Button left = new Button(act);
-        left.setText(text);
-        left.setLayoutParams(old.getLayoutParams());
-
-        Button right = new Button(act);
-        right.setText("TempButton");
-        right.setLayoutParams(old.getLayoutParams());
-
-        right.setVisibility(View.INVISIBLE);
-
-        /**
-         * Add OnClickListener and OnLongClickListener
-         */
-
-        left.setOnClickListener(this);
-        right.setOnClickListener(this);
-
-
-        /**
-         * Add them on.
-         */
-        newRow.addView(left);
-        newRow.addView(right);
-
-        theTable.addView(newRow);
-    }
-
-    /**
-     * Deal with add activity if there are odd number of buttons.
-     *
-     * @param theRow The current row that already has 1 button.
-     * @param text   The name of the new activity.
-     */
-    private void addButtonAsSecond(TableRow theRow, String text) {
-
-        /**
-         * Get the second button. Set text and visibility.
-         */
-        Button btn = (Button) theRow.getChildAt(1);
-
-        btn.setText(text);
-        btn.setVisibility(View.VISIBLE);
+        Log.e("attached?",isAdded()+"");
     }
 
     /**
@@ -179,7 +101,7 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          */
         Button btn = (Button) v;
         String actName = btn.getText().toString();
-        String tableName = actName.replace(" ", "");
+        String dbTableName = actName.replace(" ", "_");
 
         /**
          * Initialize the array for the stored times and iterate through.
@@ -187,7 +109,7 @@ public class ShowTab extends Fragment implements View.OnClickListener {
         ArrayList<String> timeHist = new ArrayList<>();
 
         SQLiteDatabase db = RecordTab.dbHelper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + tableName, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + dbTableName, null);
 
         if (c.getCount() > 1) {
 
@@ -216,6 +138,16 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          * Get current activity and inflate the Popup Window layout.
          */
         Activity currentAct = getActivity();
+
+        boolean isAttached = isAdded();
+
+        Log.e("acttt", isAttached+"");
+
+        Log.e("wtf",currentAct.getClass().toString());
+        Log.e("debug","get to get activity");
+        Log.e("debut",actName);
+
+
         View popupView = currentAct.getLayoutInflater().inflate(R.layout.record_ack_popup, null);
 
         /**
@@ -263,6 +195,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          * Use again popup window. Initialize it.
          */
         Activity currentAct = getActivity();
+
+        Log.e("debug", currentAct.getLocalClassName());
 
         View buttonsTable = currentAct.findViewById(R.id.showButtonsTable);
 

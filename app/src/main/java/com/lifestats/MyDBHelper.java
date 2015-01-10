@@ -15,7 +15,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ActivitiesDB";
     public static final String[] DEFAULT_TABLES =
-            {"Wakeup", "Gotobed", "Breakfast", "Lunch", "Dinner", "WorkOut"};
+            {"Wake_up", "Go_to_bed", "Breakfast", "Lunch", "Dinner", "Workout"};
 
     /**
      * Constructor.
