@@ -25,6 +25,3 @@ proguard/
 # Log Files
 *.log
 /.nb-gradle/profiles/private/
-
-# Other Files
-pictures/

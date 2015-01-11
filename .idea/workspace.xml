@@ -48,7 +48,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53714b1-c794-4a78-8794-bf1def096645" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/stringstotranslate.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/stringstotranslate.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LifeStats.iws" />
@@ -71,158 +70,7 @@
     <favorites_list name="LifeStats" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="RecordTab.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.96875" vertical-offset="27" max-vertical-offset="8074">
-              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="method#onAttach#0;class#RecordTab#0" expanded="false" />
-                <element signature="e#4117#4156#0" expanded="true" />
-                <element signature="e#4302#4326#0" expanded="true" />
-                <element signature="e#4371#4406#0" expanded="true" />
-                <element signature="e#6425#6467#0" expanded="true" />
-                <element signature="e#7423#7457#0" expanded="true" />
-                <element signature="e#7574#7604#0" expanded="true" />
-                <element signature="e#9201#9281#0" expanded="true" />
-                <element signature="e#9561#9621#0" expanded="true" />
-                <element signature="e#11002#11043#0" expanded="true" />
-                <element signature="e#11331#11391#0" expanded="true" />
-                <element signature="e#12329#12358#0" expanded="true" />
-                <element signature="e#13124#13160#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="record_ack_popup.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_ack_popup.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7096775" vertical-offset="114" max-vertical-offset="638">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="4048">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#2465#2778#0" expanded="true" />
-                <element signature="e#2530#2569#0" expanded="true" />
-                <element signature="e#2759#2760#0" expanded="true" />
-                <element signature="e#3762#3787#0" expanded="true" />
-                <element signature="e#3951#3974#0" expanded="true" />
-                <element signature="e#5080#5113#0" expanded="true" />
-                <element signature="e#5663#5664#0" expanded="true" />
-                <element signature="e#5707#5708#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowTab.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ShowTab.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-48.65625" vertical-offset="4339" max-vertical-offset="8492">
-              <caret line="270" column="85" selection-start-line="270" selection-start-column="85" selection-end-line="270" selection-end-column="85" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#3411#3450#0" expanded="true" />
-                <element signature="e#3596#3620#0" expanded="true" />
-                <element signature="e#3665#3700#0" expanded="true" />
-                <element signature="e#4797#4829#0" expanded="true" />
-                <element signature="e#5114#5150#0" expanded="true" />
-                <element signature="e#7835#7874#0" expanded="true" />
-                <element signature="e#7908#7967#0" expanded="true" />
-                <element signature="e#9405#9452#0" expanded="true" />
-                <element signature="e#10392#10431#0" expanded="true" />
-                <element signature="e#10709#10769#0" expanded="true" />
-                <element signature="e#11721#11755#0" expanded="true" />
-                <element signature="e#11864#11922#0" expanded="true" />
-                <element signature="e#12720#12754#0" expanded="true" />
-                <element signature="e#12864#12922#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDBHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/MyDBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2156">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stringstotranslate.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/stringstotranslate.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5532934" vertical-offset="0" max-vertical-offset="835">
-              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="record_tab.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/record_tab.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="42.0" vertical-offset="3128" max-vertical-offset="3652">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="109" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeDateFormatter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/TimeDateFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1892">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#1435#1436#0" expanded="true" />
-                <element signature="e#1465#1466#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ButtonHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/ButtonHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4004">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -1549,7 +1397,11 @@
       <created>1420948224864</created>
       <updated>1420948224864</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="minor tweak.">
+      <created>1420949037528</created>
+      <updated>1420949037528</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1573,7 +1425,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32295272" sideWeight="0.49913645" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325688" sideWeight="0.50032157" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19516407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19516407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325688" sideWeight="0.50032157" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1602,7 +1454,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="ViewPager scroll working. Good." />
     <MESSAGE value="Added icon." />
     <MESSAGE value="Swipe inside tab roughly working." />
     <MESSAGE value="Big problems. Need to redesign UI." />
@@ -1627,7 +1478,8 @@
     <MESSAGE value="working version. Finally!!!!!!!!!!!!!!" />
     <MESSAGE value="Pretty  much done." />
     <MESSAGE value="Should be done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Should be done." />
+    <MESSAGE value="minor tweak." />
+    <option name="LAST_COMMIT_MESSAGE" value="minor tweak." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2023,30 +1875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.96875" vertical-offset="27" max-vertical-offset="8074">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#onAttach#0;class#RecordTab#0" expanded="false" />
-            <element signature="e#4117#4156#0" expanded="true" />
-            <element signature="e#4302#4326#0" expanded="true" />
-            <element signature="e#4371#4406#0" expanded="true" />
-            <element signature="e#6425#6467#0" expanded="true" />
-            <element signature="e#7423#7457#0" expanded="true" />
-            <element signature="e#7574#7604#0" expanded="true" />
-            <element signature="e#9201#9281#0" expanded="true" />
-            <element signature="e#9561#9621#0" expanded="true" />
-            <element signature="e#11002#11043#0" expanded="true" />
-            <element signature="e#11331#11391#0" expanded="true" />
-            <element signature="e#12329#12358#0" expanded="true" />
-            <element signature="e#13124#13160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/TimeDateFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1892">
@@ -2159,6 +1987,30 @@
         <state vertical-scroll-proportion="0.5532934" vertical-offset="0" max-vertical-offset="835">
           <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lifestats/RecordTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5965131" vertical-offset="27" max-vertical-offset="8074">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#onAttach#0;class#RecordTab#0" expanded="false" />
+            <element signature="e#4117#4156#0" expanded="true" />
+            <element signature="e#4302#4326#0" expanded="true" />
+            <element signature="e#4371#4406#0" expanded="true" />
+            <element signature="e#6425#6467#0" expanded="true" />
+            <element signature="e#7423#7457#0" expanded="true" />
+            <element signature="e#7574#7604#0" expanded="true" />
+            <element signature="e#9201#9281#0" expanded="true" />
+            <element signature="e#9561#9621#0" expanded="true" />
+            <element signature="e#11002#11043#0" expanded="true" />
+            <element signature="e#11331#11391#0" expanded="true" />
+            <element signature="e#12329#12358#0" expanded="true" />
+            <element signature="e#13124#13160#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
