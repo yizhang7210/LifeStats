@@ -1,7 +1,7 @@
 LifeStats
 =========
 
-First thing fist. This App is published on Google Play at: [Google Play](https://play.google.com/store/apps/details?id=com.lifestats).
+First thing fist. This App is published on Google Play at: [LifeStats](https://play.google.com/store/apps/details?id=com.lifestats).
 
 
 LifeStats is a utility mobile application that lets you record your daily activities with a simple tap on a screen. You can also review the historical times of these activities to better understand your own lifestyle.
