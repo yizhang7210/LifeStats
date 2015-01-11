@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:id="@+id/confirmDeleteText"
+        android:id="@+id/confirmClearText"
         android:textColor="@color/black"
         android:gravity="center_vertical|center_horizontal"
         android:layout_centerHorizontal="true"
@@ -17,14 +17,14 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmDeleteText"
+        android:layout_below="@+id/confirmClearText"
         android:gravity="center"
         android:layout_centerHorizontal="true">
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="@string/yes"
-        android:id="@+id/deleteYesButton"
+        android:id="@+id/clearYesButton"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
@@ -32,7 +32,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="@string/no"
-        android:id="@+id/deleteNoButton"
+        android:id="@+id/clearNoButton"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
     </LinearLayout>

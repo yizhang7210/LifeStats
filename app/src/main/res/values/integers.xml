@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="popupWindowFontSize">21</integer>
+    <integer name="graphTitleFontSize">55</integer>
+    <integer name="millis">10800000</integer>
+</resources>

@@ -1,43 +1,62 @@
+/**
+ * LifeStats
+ * Copyright (C) 2014  Yi Zhang
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License,
+ * with the "Linking Exception", which can be found at the license.txt
+ * file in this program.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * with the "Linking Exception" along with this program; if not,
+ * write to the author Yi Zhang <yi.zhang7210@gmail.com>.
+ */
+
 package com.lifestats;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
- * Created by yzhang on 10/01/15.
+ * Button helper: Responsible for adding buttons to views.
  */
 public class ButtonHelper {
-    public static ArrayList<String> existButtons = new ArrayList<>();
     public static final int RECORD_TAB = 0;
     public static final int SHOW_TAB = 1;
+    public static ArrayList<String> existButtons = new ArrayList<>();
 
+    /**
+     * Depending on the tab and if its new, add the button to the layout.
+     *
+     * @param act         The running activity.
+     * @param dbTableName The database table name corresponding to the button.
+     * @param isNew       If is the button is being added the first time.
+     * @param whichTab    RECORD_TAB or SHOW_TAB.
+     * @return The Button object that is constructed.
+     */
     public static Button addButton(Activity act, String dbTableName, boolean isNew, int whichTab) {
+
         /**
          * Get the last row of buttons.
          * Deal with odd and even number of buttons accordingly.
          */
-
-        Log.e("btn",dbTableName);
-
         Button btn;
+        String buttonName = dbTableName.replace("_", " ");
+
         int tableId;
-        switch (whichTab){
+        switch (whichTab) {
             case ButtonHelper.RECORD_TAB:
                 tableId = R.id.recordButtonsTable;
                 break;
@@ -48,35 +67,55 @@ public class ButtonHelper {
                 throw new RuntimeException("Adding button to non-existent tab");
         }
 
+        /**
+         * Get the last row of the table where the button will be added to.
+         * Deal with the left and right button separately.
+         */
         TableLayout table = (TableLayout) act.findViewById(tableId);
         TableRow lastRow = (TableRow) table.getChildAt(table.getChildCount() - 1);
 
-        String buttonName = dbTableName.replace("_"," ");
         if (lastRow.getChildAt(1).getVisibility() == View.VISIBLE) {
-            btn = addButtonAsFirst(act, table, lastRow, buttonName, whichTab);
+            btn = addButtonAsFirst(act, table, lastRow, buttonName);
         } else {
             btn = addButtonAsSecond(lastRow, buttonName);
         }
 
-        if(isNew){
-            Log.e("debut","button helper add button is new");
+        /**
+         * Also add to database if its a new button.
+         */
+        if (isNew) {
             ButtonHelper.addActivityToDB(buttonName);
         }
 
         return btn;
     }
 
+    /**
+     * Add the new activity represented by the button to database.
+     *
+     * @param buttonName The text/name of the button.
+     */
     private static void addActivityToDB(String buttonName) {
 
-        String dbName = buttonName.replace(" ","_");
-
+        /**
+         * Convert to the right name format and execute the command.
+         */
+        String dbName = buttonName.replace(" ", "_");
         SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
-
         db.execSQL(RecordTab.dbHelper.getCreateTableCommand(dbName));
     }
 
+    /**
+     * Add button to the layout as the left one on a row.
+     *
+     * @param act     The running activity.
+     * @param table   The table of buttons.
+     * @param lastRow The previous row of buttons.
+     * @param actName Name of the activity.
+     * @return The Button object that is constructed.
+     */
     private static Button addButtonAsFirst(Activity act, TableLayout table,
-                                         TableRow lastRow, String actName, int whichTab) {
+                                           TableRow lastRow, String actName) {
 
         /**
          * Create new row for the table.
@@ -100,29 +139,6 @@ public class ButtonHelper {
         right.setVisibility(View.INVISIBLE);
 
         /**
-         * Add OnClickListener and OnLongClickListener
-         */
-
-        /*
-        switch (whichTab){
-            case ButtonHelper.RECORD_TAB:
-
-                RecordTab r = (RecordTab) act.getFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":0");
-                left.setOnClickListener(r);
-                left.setOnLongClickListener(r);
-                right.setOnClickListener(r);
-                right.setOnLongClickListener(r);
-                break;
-            case ButtonHelper.SHOW_TAB:
-                ShowTab s = (ShowTab) act.getFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":1");
-
-                left.setOnClickListener(s);
-                right.setOnClickListener(s);
-        }
-        */
-
-
-        /**
          * Add them on.
          */
         newRow.addView(left);
@@ -133,14 +149,21 @@ public class ButtonHelper {
         return left;
     }
 
-    private static Button addButtonAsSecond(TableRow theRow, String tableName) {
+    /**
+     * Add button to the layout as the right one on a row
+     *
+     * @param theRow  The row the button will be added to.
+     * @param actName Name of the activity.
+     * @return The Button object that is constructed.
+     */
+    private static Button addButtonAsSecond(TableRow theRow, String actName) {
 
         /**
          * Get the second button. Set text and visibility.
          */
         Button btn = (Button) theRow.getChildAt(1);
 
-        btn.setText(tableName);
+        btn.setText(actName);
         btn.setVisibility(View.VISIBLE);
 
         return btn;

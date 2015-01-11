@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeStats</string>
+    <string name="showActivity">Show Activity</string>
+    <string name="RecordActivity">Record Activity</string>
+    <string name="wakeupButton">Wake up</string>
+    <string name="sleepButton">Go to bed</string>
+    <string name="breakfastButton">Breakfast</string>
+    <string name="lunchButton">Lunch</string>
+    <string name="addNewActivities">Add New Activities</string>
+    <string name="addActivityBox">New Activity</string>
+    <string name="addButtonText">Add</string>
+    <string name="dinnerButton">Dinner</string>
+    <string name="workoutButton">Workout</string>
+    <string name="showActivities">Show Activities</string>
+    <string name="recordActivities">Record Activities</string>
+    <string name="ok">OK</string>
+    <string name="recordSuccessful">You have recorded activity\n%1$s\nat time\n%2$s</string>
+    <string name="confirmClear">Are you sure you want to clear the history of activity\n%1$s?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="warnNoData">You have no/too few past activities of\n%1$s.</string>
+    <string name="tabOutOfRange">Tab position out of range.</string>
+    <string name="graphTitle">Your recorded history of %1$s.</string>
+    <string name="wrongDateFormatError">Recorded time in database has wrong format. It should be of the form %1%s.</string>
+</resources>

@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LifeStats</string>
-    <string name="hello">Hello World and Android!</string>
-    <string name="showActivity">Show Activity</string>
-    <string name="RecordActivity">Record Activity</string>
-    <string name="wakeupButton">Wake up</string>
-    <string name="sleepButton">Go to bed</string>
-    <string name="breakfastButton">Breakfast</string>
-    <string name="lunchButton">Lunch</string>
-    <string name="addNewActivities">Add New Activities</string>
-    <string name="addActivityBox">New Activity</string>
-    <string name="addButtonText">Add</string>
-    <string name="dinnerButton">Dinner</string>
-    <string name="workoutButton">Workout</string>
-    <string name="showActivities">Show Activities</string>
-    <string name="recordActivities">Record Activities</string>
-    <string name="ok">OK</string>
-    <string name="recordSuccessful">You have recorded activity\n%1$s\nat time\n%2$s</string>
-    <string name="confirmDelete">Are you sure you want to clear the history of activity\n%1$s?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
     <string name="column_name_time">TIME</string>
-    <string name="warnNoData">You have no/too few past activities of\n%1$s.</string>
     <string name="dateTimeFormat">yyyy:MM:dd:HH:mm:ss</string>
     <string name="dateFormat">yyyy:MM:dd</string>
     <string name="timeFormat">HH:mm:ss</string>
+    <string name="sqlQuerySavedTables">SELECT name FROM sqlite_master WHERE type=\'table\'</string>
+    <string name="showTabTag">android:switcher:%1$d:1</string>
+    <string name="androidMetadata">android_metadata</string>
+    <string name="name">name</string>
+    <string name="sqlDelete">"DELETE FROM "</string>
+    <string name="sqlSelectAll">"SELECT * FROM "</string>
 </resources>
