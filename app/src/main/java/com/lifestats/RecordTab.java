@@ -2,6 +2,7 @@ package com.lifestats;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -64,7 +65,6 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
             Button button = (Button) buttonView;
             button.setOnClickListener(this);
             button.setOnLongClickListener(this);
-            Log.e("button", button.getText().toString());
             ButtonHelper.existButtons.add(button.getText().toString().replace(" ", "_"));
         }
 
@@ -110,7 +110,6 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
         if (buttonId == R.id.addActButton) {
 
-            Log.e("adding new button", "wtf");
             /**
              * Get button name from EditText.
              */
@@ -128,10 +127,21 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
              */
 
             Button newBtnR = ButtonHelper.addButton(act, text, true, ButtonHelper.RECORD_TAB);
-            //Button newBtnS = ButtonHelper.addButton(act, text, true, ButtonHelper.SHOW_TAB);
+            Button newBtnS = ButtonHelper.addButton(act, text, true, ButtonHelper.SHOW_TAB);
+
 
             newBtnR.setOnClickListener(this);
             newBtnR.setOnLongClickListener(this);
+
+            Log.e("listener","about to add listener");
+            ShowTab s = (ShowTab) getFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":1");
+
+            Log.e("isnull",Boolean.toString(s ==null));
+
+            Log.e("properties of current show tab","lala");
+            newBtnS.setOnClickListener(s);
+            Log.e("listener","done setting listener");
+
 
             /**
              * Hide the soft keyboard.
@@ -306,13 +316,9 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
         tableName = tableName.replace(" ", "_");
 
-        Log.e("SQL", tableName);
-
         Cursor c = check.rawQuery("SELECT * FROM "+tableName, null);
 
         c.moveToLast();
-
-        Log.e("SQL", ""+c.getString(0));
     }
 
     @Override

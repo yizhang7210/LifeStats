@@ -64,8 +64,8 @@ public class ShowTab extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
 
         SQLiteDatabase db = RecordTab.dbHelper.getWritableDatabase();
 
@@ -83,7 +83,6 @@ public class ShowTab extends Fragment implements View.OnClickListener {
                 c.moveToNext();
             }
         }
-        Log.e("attached?",isAdded()+"");
     }
 
     /**
@@ -94,12 +93,15 @@ public class ShowTab extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+        Log.e("debug","in show tab on click listener");
         /**
          * Get the button text, i.e. name of the database table.
          */
         Button btn = (Button) v;
         String actName = btn.getText().toString();
         String dbTableName = actName.replace(" ", "_");
+
+        Log.e("debug",actName);
 
         /**
          * Initialize the array for the stored times and iterate through.
@@ -138,13 +140,6 @@ public class ShowTab extends Fragment implements View.OnClickListener {
         Activity currentAct = getActivity();
 
         boolean isAttached = isAdded();
-
-        Log.e("acttt", isAttached+"");
-
-        Log.e("wtf",currentAct.getClass().toString());
-        Log.e("debug","get to get activity");
-        Log.e("debut",actName);
-
 
         View popupView = currentAct.getLayoutInflater().inflate(R.layout.record_ack_popup, null);
 
@@ -193,8 +188,6 @@ public class ShowTab extends Fragment implements View.OnClickListener {
          * Use again popup window. Initialize it.
          */
         Activity currentAct = getActivity();
-
-        Log.e("debug", currentAct.getLocalClassName());
 
         View buttonsTable = currentAct.findViewById(R.id.showButtonsTable);
 

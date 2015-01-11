@@ -5,10 +5,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 /**
  * Main user interface.
@@ -98,7 +100,7 @@ public class MainActivity extends FragmentActivity {
     /**
      * Define the PagerAdapter.
      */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+    private class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
@@ -113,8 +115,11 @@ public class MainActivity extends FragmentActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
+                    Log.e("item", "0");
+
                     return new RecordTab();
                 case 1:
+                    Log.e("item","1");
                     return new ShowTab();
                 default:
                     throw new RuntimeException("Tab position out of range.");

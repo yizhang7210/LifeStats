@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -32,6 +33,8 @@ public class ButtonHelper {
          * Deal with odd and even number of buttons accordingly.
          */
 
+        Log.e("btn",dbTableName);
+
         Button btn;
         int tableId;
         switch (whichTab){
@@ -56,6 +59,7 @@ public class ButtonHelper {
         }
 
         if(isNew){
+            Log.e("debut","button helper add button is new");
             ButtonHelper.addActivityToDB(buttonName);
         }
 
@@ -103,19 +107,20 @@ public class ButtonHelper {
         switch (whichTab){
             case ButtonHelper.RECORD_TAB:
 
-                RecordTab r = new RecordTab();
+                RecordTab r = (RecordTab) act.getFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":0");
                 left.setOnClickListener(r);
                 left.setOnLongClickListener(r);
                 right.setOnClickListener(r);
                 right.setOnLongClickListener(r);
                 break;
             case ButtonHelper.SHOW_TAB:
-                ShowTab s = new ShowTab();
+                ShowTab s = (ShowTab) act.getFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":1");
 
                 left.setOnClickListener(s);
                 right.setOnClickListener(s);
         }
         */
+
 
         /**
          * Add them on.
