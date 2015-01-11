@@ -19,7 +19,7 @@
     <string name="confirmClear">Are you sure you want to clear the history of activity\n%1$s?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="warnNoData">You have no/too few past activities of\n%1$s.</string>
+    <string name="warnNoData">You have no past activities \n of %1$s.</string>
     <string name="tabOutOfRange">Tab position out of range.</string>
     <string name="graphTitle">Your recorded history of %1$s.</string>
     <string name="wrongDateFormatError">Recorded time in database has wrong format. It should be of the form %1%s.</string>
