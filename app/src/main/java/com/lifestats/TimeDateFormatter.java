@@ -16,6 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * with the "Linking Exception" along with this program; if not,
  * write to the author Yi Zhang <yi.zhang7210@gmail.com>.
+ *
+ * Acknowledgement:
+ * This app used the GraphView library from: http://www.jjoe64.com/p/graphview-library.html,
+ * and examples from the official Android documentation: http://developer.android.com
+ * and http://stackoverflow.com.
  */
 
 package com.lifestats;
@@ -47,8 +52,8 @@ public class TimeDateFormatter extends DateAsXAxisLabelFormatter {
         int hour = (int) Math.floor(time);
         time = (time - hour) * 60;
         int min = (int) Math.floor(time);
-        time = (time - min) * 60;
-        int sec = (int) Math.floor(time);
+        //time = (time - min) * 60;
+        //int sec = (int) Math.floor(time);
 
         return (String.format("%02d:%02d", hour, min));
     }
@@ -63,12 +68,12 @@ public class TimeDateFormatter extends DateAsXAxisLabelFormatter {
     @Override
     public String formatLabel(double value, boolean isValueX) {
         if (isValueX) {
-            return super.formatLabel(value, isValueX);
+            return super.formatLabel(value, true);
         } else {
             /**
              * Parse a negative number between -24 and 0 to time.
              */
-            return doubleToTimeString(-Double.parseDouble(super.formatLabel(value, isValueX)));
+            return doubleToTimeString(-Double.parseDouble(super.formatLabel(value, false)));
         }
     }
 

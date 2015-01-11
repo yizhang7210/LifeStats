@@ -16,7 +16,13 @@
  * You should have received a copy of the GNU General Public License
  * with the "Linking Exception" along with this program; if not,
  * write to the author Yi Zhang <yi.zhang7210@gmail.com>.
+ *
+ * Acknowledgement:
+ * This app used the GraphView library from: http://www.jjoe64.com/p/graphview-library.html,
+ * and examples from the official Android documentation: http://developer.android.com
+ * and http://stackoverflow.com.
  */
+
 package com.lifestats;
 
 import android.content.Context;
@@ -83,7 +89,6 @@ public class MyDBHelper extends SQLiteOpenHelper {
      * @return The SQL command for creating that table.
      */
     public String getCreateTableCommand(String tableName) {
-        String command = "CREATE TABLE IF NOT EXISTS " + tableName + "(TIME TEXT);";
-        return (command);
+        return ("CREATE TABLE IF NOT EXISTS " + tableName + "(TIME TEXT);");
     }
 }
