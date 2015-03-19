@@ -31,7 +31,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -161,7 +160,7 @@ public class RecordTab extends Fragment implements View.OnClickListener, View.On
 
             if(text.equals(""))
                 return;
-            
+
             /**
              * Add the button to the list of existing buttons.
              */
